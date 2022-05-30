@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleSheet, Text, View } from 'react-native';
 
 // Screens
 import HomeScreen from './views/homeScreen';
@@ -37,13 +38,14 @@ function MainContainer() {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70}
-        }}>
+          
+          //tabBarStyle: { position: 'absolute' },
+          //tabBarIconStyle: { padding: 10}, //this effects only icon
+          tabBarLabelStyle: {paddingBottom: 10}, // this effects only label
+          //tabBarItemStyle: { paddingBottom: 0}, // this a single option both icon and text
+          tabBarStyle: { height: 60 },
+          tabBarHideOnKeyboard : true,
+        })}>
 
         <Tab.Screen name={homeName} component={HomeScreen} />
         <Tab.Screen name={loginName} component={CustomerLogin} />
@@ -55,3 +57,13 @@ function MainContainer() {
 }
 
 export default MainContainer;
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
