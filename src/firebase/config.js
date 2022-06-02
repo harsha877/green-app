@@ -1,4 +1,3 @@
-
 import  firebase from "firebase";
 //import { getFireStrore, collection, getDocs } from 'firebase/firestore';
 
@@ -13,12 +12,30 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
 export const db = firebase.firestore(app);
 
+export const readCollection = async collectionName => {
+    var collectioData = [];
+    // db.collection(collectionName)
+    //         .get()
+    //         .then( (snap) => {
+    //             snap.forEach( (doc) => {
+    //                 console.log("data " + doc.data());
+    //                 collectioData.push(doc.data);
+    //             });
+    //             return collectioData;
+    //         });
+    //return collectioData;
 
-// export const qref = collection(db, 'quizes');
+    const rawsnapshot = await db.collection(collectionName).get();
 
-// getDocs(qref).then((snap) => {console.log(JSON.stringify(snap)); const d = JSON.stringify(snap) });
-   
+    rawsnapshot.forEach ((doc) => {
+                         //console.log((doc.data()));
+                         collectioData.push(doc.data());
+                     });
+    
+    return collectioData;
+      
+};

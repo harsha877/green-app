@@ -5,6 +5,7 @@ import { LogBox } from 'react-native';
 
 function App() {
   LogBox.ignoreLogs(['AsyncStorage has been extracted from react-native core']);
+  LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
   return (
     <MainContainer/>
   );
