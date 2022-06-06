@@ -33,7 +33,7 @@ export default function QuizScreen({ navigation }) {
     return (
         <ScrollView >
             <CustumeButton name = 'Refresh' onPressHandler = {getQuizList} type = 'button' />
-            <CustumeTable data = {quizzes.records}/>
+            <Text>{JSON.stringify(quizzes.records)}</Text>
         </ScrollView>
     );
 }
