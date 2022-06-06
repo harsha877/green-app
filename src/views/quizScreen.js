@@ -12,7 +12,8 @@ export default function QuizScreen({ navigation }) {
     var [quizzes, setTest] = useState({records: {}, status: 'unloaded'});
 
     const getQuizList = () => {
-        let records = [];
+        setTest({records: {}, status: 'unloaded'});
+        //let records = [];
         readCollection(GREEN_DB_COLLECTION_QUIZES).then( data => {
             console.log(data);
             setTest({ records : data , status : "loaded"});
@@ -32,7 +33,7 @@ export default function QuizScreen({ navigation }) {
     return (
         <ScrollView >
             <CustumeButton name = 'Refresh' onPressHandler = {getQuizList} type = 'button' />
-            <Text>{JSON.stringify(quizzes.records)}</Text>
+            <CustumeTable data = {quizzes.records}/>
         </ScrollView>
     );
 }
