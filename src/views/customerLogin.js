@@ -3,9 +3,8 @@ import { View, Text } from 'react-native';
 // import bottomNav from './styles/bottomNav';
 
 export default function CustomerLogin({ navigation }) {
-    return (
         const [email, setEmail] = useState("");
-         const [password, setPassword] = useState("");
+        const [password, setPassword] = useState("");
  
    function handleLogin(e)
    {
