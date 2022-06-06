@@ -3,9 +3,15 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function CustumeButton({name, onPressHandler, type}){
 
+    if (type === 'button') {
+        type =  styles.button
+    }else{
+        type =  styles.list
+    }
+
     return(
         <TouchableOpacity onPress={onPressHandler}>
-            <View style = {type == 'button' ? styles.button : styles.list}>
+            <View style = {type}>
                 <Text style = {styles.buttonText}>
                     {name}
                 </Text>
