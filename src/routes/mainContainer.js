@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, Text, View } from 'react-native';
+import {StateProvider} from '../views/stateProvider';
+import reducer, {initialState} from '../views/reducer';
 
 // Screens
 import HomeScreen from '../views/homeScreen';
@@ -11,7 +13,7 @@ import QuizScreen from '../views/quizScreen';
 import QuizScreenNavigator from './quizScreenNavigation';
 
 //Screen names
-const homeName = "Home";
+const homeName = "QuestionScreen";
 const loginName = "Customer Login";
 const quizName = "Quiz";
 
@@ -19,6 +21,7 @@ const Tab = createBottomTabNavigator();
 
 function MainContainer() {
   return (
+    <StateProvider initialState={initialState} reducer={reducer}>
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName={homeName}
@@ -48,12 +51,13 @@ function MainContainer() {
           tabBarHideOnKeyboard : true,
         })}>
 
-        <Tab.Screen name={homeName} component={HomeScreen} />
+        <Tab.Screen name={homeName} component={HomeScreen} initialParams={{index: 0}}/>
         <Tab.Screen name={loginName} component={CustomerLogin} />
         <Tab.Screen name={quizName} options={{headerShown: false}} component={QuizScreenNavigator} />
 
       </Tab.Navigator>
     </NavigationContainer>
+    </StateProvider>
   );
 }
 

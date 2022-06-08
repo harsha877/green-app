@@ -1,0 +1,43 @@
+{
+    "questions": [
+        {
+            "question": "How long is the average shower in your household?",
+            "answers": [
+                "Under 5 min",
+                "5-10 min",
+                "11-15 min",
+                "Over 15 min"
+            ],
+            "correctIndex": 1
+        },
+        {
+            "question": "Do you have low-flow shower heads?",
+            "answers": [
+                "Yes",
+                "No",
+                "Some"
+            ],
+            "correctIndex": 3
+        },
+        {
+            "question": "Do you take baths? If so, how often?",
+            "answers": [
+                "1 time per day",
+                "2 times per day",
+                "3 times per day",
+                "4 times per day"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "How long do you leave your bathroom faucets running each day?",
+            "answers": [
+                "Under 5 min",
+                "5-10 min",
+                "11-30 min",
+                "Over 30 min"
+            ],
+            "correctIndex": 3
+        }
+    ]
+}
