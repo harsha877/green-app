@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MainContainer from './src/mainContainer';
+import MainContainer from './src/routes/mainContainer';
 import { LogBox } from 'react-native';
 
 
