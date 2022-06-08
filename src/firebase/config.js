@@ -1,4 +1,6 @@
-import  firebase from "firebase";
+import  * as firebase from "firebase";
+//import { doc } from 'firebase/firestore';
+//import firestore from '@react-native-firebase/firestore';
 //import { getFireStrore, collection, getDocs } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -16,6 +18,7 @@ const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : fir
 
 export const db = firebase.firestore(app);
 
+//read colletion takes document name
 export const readCollection = async (collectionName) => {
     var collectioData = [];
     const rawsnapshot = await db.collection(collectionName).get();
@@ -28,3 +31,33 @@ export const readCollection = async (collectionName) => {
     return collectioData;
       
 };
+
+const docData = {
+  quizName: 'test',
+  quizid: 30,
+};
+
+//writes data to the collection takes the JSON, document name, collection name
+//example JSON
+  // const docData = {
+  //   quizName: 'Ada Lovelace',
+  //   quizid: 30,
+  // };
+// Usage writeCollection(docData, 'testrun', 'quizes');
+export const writeCollection = async (docData, docName, collectionName) => {
+  var collectioData = [];
+  
+
+  db.collection(collectionName)
+  .doc(docName)
+  .set(docData)
+  .then(() => {
+    console.log('Document Added');
+    return 1;
+  }).catch( (e) => {
+    console.log(e);
+    return 0;
+  });
+    
+};
+
