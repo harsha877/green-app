@@ -5,10 +5,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, Text, View } from 'react-native';
 
 // Screens
-import HomeScreen from './views/homeScreen';
-import CustomerLogin from './views/customerLogin';
-import QuizScreen from './views/quizScreen';
-import QuizScreenNavigator from './routes/quizScreenNavigation';
+import HomeScreen from '../views/homeScreen';
+import CustomerLogin from '../views/customerLogin';
+import QuizScreen from '../views/quizScreen';
+import QuizScreenNavigator from './quizScreenNavigation';
 
 //Screen names
 const homeName = "Home";
