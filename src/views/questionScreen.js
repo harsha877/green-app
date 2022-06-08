@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from 'react-native';
 import CustumeButton from "../components/button";
+import { USER_CUSTOM_QUIZ_HOMESCREEN, USER_CUSTOM_QUIZ_RESULTSCREEN } from "../constant/constants";
 
 export default function QuestionScreen({ navigation }) {
+
+    const RsultPage = () => {
+        
+        navigation.navigate(USER_CUSTOM_QUIZ_RESULTSCREEN);
+        
+    };
+
     return (
         <View>
             <View>
@@ -19,7 +27,7 @@ export default function QuestionScreen({ navigation }) {
             <View style = {styles.navigation}>
                 <CustumeButton name = 'Previous' />
                 <CustumeButton name = 'Next' />
-                <CustumeButton name = 'Submit' />
+                <CustumeButton name = 'Submit' onPressHandler = {RsultPage} />
             </View>
         </View>
     );

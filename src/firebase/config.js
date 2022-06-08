@@ -16,19 +16,8 @@ const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : fir
 
 export const db = firebase.firestore(app);
 
-export const readCollection = async collectionName => {
+export const readCollection = async (collectionName) => {
     var collectioData = [];
-    // db.collection(collectionName)
-    //         .get()
-    //         .then( (snap) => {
-    //             snap.forEach( (doc) => {
-    //                 console.log("data " + doc.data());
-    //                 collectioData.push(doc.data);
-    //             });
-    //             return collectioData;
-    //         });
-    //return collectioData;
-
     const rawsnapshot = await db.collection(collectionName).get();
 
     rawsnapshot.forEach ((doc) => {

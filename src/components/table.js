@@ -3,22 +3,18 @@ import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import { GREEN_DB_COLLECTION_QUIZES_COLUMNS } from "../constant/constants";
 import Row from "./row";
 
-export default function CustumeTable({data}){
+export default function CustumeTable({data , onPressHandler}){
 
     return (
-        <View style = {styles.view}>
-            {data.length > 0 && (
-               
-                    <FlatList
-                    data = {data}
-                    renderItem = { ({item}) => 
-                            (<Row row= {item} />)
-                        }
-                    
-                    />
-                )}
-        </View>
-    );
+        <FlatList
+                style = {styles.view}
+                nestedScrollEnabled={true}
+                data = {data}
+                renderItem = { ({item}) => 
+                        (<Row onPressHandler = {onPressHandler} row= {item} />)}
+                        
+        />
+        );
 };
 
 const styles = StyleSheet.create({
