@@ -8,6 +8,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './views/homeScreen';
 import CustomerLogin from './views/customerLogin';
 import QuizScreen from './views/quizScreen';
+import QuizScreenNavigator from './routes/quizScreenNavigation';
 
 //Screen names
 const homeName = "Home";
@@ -49,7 +50,7 @@ function MainContainer() {
 
         <Tab.Screen name={homeName} component={HomeScreen} />
         <Tab.Screen name={loginName} component={CustomerLogin} />
-        <Tab.Screen name={quizName} component={QuizScreen} />
+        <Tab.Screen name={quizName} options={{headerShown: false}} component={QuizScreenNavigator} />
 
       </Tab.Navigator>
     </NavigationContainer>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Button, ScrollView, SafeAreaView } from 'react-native';
-import { GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
-import { db, readCollection } from "../firebase/config";
+import { GREEN_DB_COLLECTION_QUIZES, USER_CUSTOM_QUIZ_QUESTIONSCREEN } from "../constant/constants";
+import { readCollection } from "../firebase/config";
 // import bottomNav from './styles/bottomNav';
 
 import CustumeButton from "../components/button";
@@ -25,16 +25,17 @@ export default function QuizScreen({ navigation }) {
         
     };
 
-    var [loadFlag, setLoadFlag] = useState( () => {
-        getQuizList();
-        return {pageStatus : 'loaded'}
-    });
+    const onPressQuiz = () => {
+        
+        navigation.navigate(USER_CUSTOM_QUIZ_QUESTIONSCREEN);
+        
+    };
     
     return (
-        <ScrollView >
+        <View>
             <CustumeButton name = 'Refresh' onPressHandler = {getQuizList} type = 'button' />
-            <Text>{JSON.stringify(quizzes.records)}</Text>
-        </ScrollView>
+            <CustumeTable data = {quizzes.records} onPressHandler = {onPressQuiz} />
+        </View>
     );
 }
 
