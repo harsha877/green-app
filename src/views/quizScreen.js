@@ -34,7 +34,7 @@ export default function QuizScreen({ navigation }) {
     return (
         <View>
             <CustumeButton name = 'Refresh' onPressHandler = {getQuizList} type = 'button' />
-            <Text>{JSON.stringify(quizzes.records)}</Text>
+            <CustumeTable data = {quizzes.records} onPressHandler = {onPressQuiz} />
         </View>
     );
 }

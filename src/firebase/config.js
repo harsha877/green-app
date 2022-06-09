@@ -32,10 +32,10 @@ export const readCollection = async (collectionName) => {
       
 };
 
-const docData = {
-  quizName: 'test',
-  quizid: 30,
-};
+// const docData = {
+//   quizName: 'test',
+//   quizid: 30,
+// };
 
 //writes data to the collection takes the JSON, document name, collection name
 //example JSON
