@@ -8,7 +8,7 @@ import reducer, {initialState} from '../views/reducer';
 
 // Screens
 import HomeScreen from '../views/homeScreen';
-import CustomerLogin from '../views/customerLogin';
+import Customer from '../views/customer';
 import QuizScreen from '../views/quizScreen';
 import QuizScreenNavigator from './quizScreenNavigation';
 
@@ -52,7 +52,7 @@ function MainContainer() {
         })}>
 
         <Tab.Screen name={homeName} component={HomeScreen} initialParams={{index: 0}}/>
-        <Tab.Screen name={loginName} component={CustomerLogin} />
+        <Tab.Screen name={loginName} component={Customer} />
         <Tab.Screen name={quizName} options={{headerShown: false}} component={QuizScreenNavigator} />
 
       </Tab.Navigator>
