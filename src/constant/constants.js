@@ -1,6 +1,7 @@
 // Database collection names
 
 export const GREEN_DB_COLLECTION_QUIZES = 'quizes';
+export const GREEN_DB_COLLECTION_CUSTOMER = 'customer';
 
 //Stack Navagation Screen Names
 export const USER_CUSTOM_QUIZ_HOMESCREEN = "Quizzes";
