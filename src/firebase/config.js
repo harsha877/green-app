@@ -1,4 +1,5 @@
-import  * as firebase from "firebase";
+import * as firebase from "firebase";
+import { GREEN_DB_COLLECTION_CUSTOMER } from "../constant/constants";
 //import { doc } from 'firebase/firestore';
 //import firestore from '@react-native-firebase/firestore';
 //import { getFireStrore, collection, getDocs } from 'firebase/firestore';
@@ -20,44 +21,63 @@ export const db = firebase.firestore(app);
 
 //read colletion takes document name
 export const readCollection = async (collectionName) => {
-    var collectioData = [];
-    const rawsnapshot = await db.collection(collectionName).get();
+  var collectioData = [];
+  const rawsnapshot = await db.collection(collectionName).get();
 
-    rawsnapshot.forEach ((doc) => {
-                         //console.log((doc.data()));
-                         collectioData.push(doc.data());
-                     });
-    
-    return collectioData;
-      
+  rawsnapshot.forEach((doc) => {
+    //console.log((doc.data()));
+    collectioData.push(doc.data());
+  });
+
+  return collectioData;
+
 };
 
-// const docData = {
-//   quizName: 'test',
-//   quizid: 30,
-// };
+export async function readCollectionDocument(collectionName, documentName) {
+  let rawsnapshot;
+  await db.collection(collectionName)
+    .doc(documentName)
+    .get()
+    .then((docsnapshot) => {
+      rawsnapshot = docsnapshot.data();
+    });
+
+  console.log("Data read from Firebase....")
+  console.log(rawsnapshot);;
+  return rawsnapshot;
+
+};
+
+const docData = {
+  name: 'windsor university department of medicine',
+  username: 'uwindsordom',
+  password: 'uwindsordom',
+  orginization: 'university of windsor',
+}
+
 
 //writes data to the collection takes the JSON, document name, collection name
 //example JSON
-  // const docData = {
-  //   quizName: 'Ada Lovelace',
-  //   quizid: 30,
-  // };
+// const docData = {
+//   quizName: 'Ada Lovelace',
+//   quizid: 30,
+// };
 // Usage writeCollection(docData, 'testrun', 'quizes');
 export const writeCollection = async (docData, docName, collectionName) => {
   var collectioData = [];
-  
+
 
   db.collection(collectionName)
-  .doc(docName)
-  .set(docData)
-  .then(() => {
-    console.log('Document Added');
-    return 1;
-  }).catch( (e) => {
-    console.log(e);
-    return 0;
-  });
-    
+    .doc(docName)
+    .set(docData)
+    .then(() => {
+      console.log('Document Added');
+      return 1;
+    }).catch((e) => {
+      console.log(e);
+      return 0;
+    });
+
 };
 
+//writeCollection(docData, 'uwindsordom', 'customer');

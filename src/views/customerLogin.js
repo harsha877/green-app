@@ -1,92 +1,97 @@
 import * as React from 'react';
-import { View, StyleSheet,Text,Image,TextInput,Button } from 'react-native';
-import {useState} from 'react';
-import {readCollection} from '../firebase/config';
+import { View, StyleSheet, Text, Image, TextInput, Button } from 'react-native';
+import { useState } from 'react';
+import { readCollectionDocument } from '../firebase/config';
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
+import reducer from './reducer';
+import { GREEN_DB_COLLECTION_CUSTOMER } from '../constant/constants';
 
 
-export default function CustomerLogin({ setUser }) {
-         const [email, setEmail] = useState("");
-         const [password, setPassword] = useState("");
-         const [status,setStatus]=useState("");
- 
-   function handleLogin(e)
-   {
-      e.preventDefault();
-      if(email=="" || email.length<5)
-      {
-        setStatus('userName should be of atleast 5 characters');
-        return;
+export default function CustomerLogin({ onSubmit }) {
+  const [username, setusername] = useState("");
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("");
+
+  function handleLogin(e) {
+    e.preventDefault();
+    if (username.length == 0) {
+      alert("Invalid Username or empty");
+      return;
+    }
+    if (password.length == 0) {
+      alert("Invalid password or empty");
+      return;
+    }
+    readCollectionDocument(GREEN_DB_COLLECTION_CUSTOMER, username).then(data => {
+
+      if ((data !== undefined) && username == data.username && password == data.password) {
+        flag = true;
+        onSubmit(data);
+        console.log('login successful');
       }
-      if(password=="" || password.length<8)
-      {
-        setStatus('password should be of atleast 8 characters');
-        return;
+      else {
+        alert('InCorrect Credentials');
       }
-      readCollection('customers').then(
-        (data)=>{
-          flag=false;
-          for(let i=0;i<data.length;i++)
-          {
-            if(email==data[i].userName && password==data[i].userPassword) flag=true;
-          }
-          if(flag) setUser(email)
-          else  setStatus('InCorrect Credentials');
-        })
-      .catch((e)=>console.log(e));
-   }
+    })
+      .catch((e) => console.log(e));
+  }
+
+
   return (
     <View style={styles.container}>
 
-      <Image source={require('../../assets/avatar.png')}/>
-        <TextInput
+      <Image source={require('../../assets/avatar.png')} />
+      <TextInput
         style={styles.TextInput}
-          placeholder="Email"
-          value={email}
-          onChangeText={(email) => setEmail(email)}
-        />
+        placeholder="username"
+        value={username}
+        onChangeText={(username) => setusername(username)}
+      />
 
-        <TextInput
+      <TextInput
         style={styles.TextInput}
-          placeholder="Password"
-          secureTextEntry={true}
-          value={password}
-          onChangeText={(password) => setPassword(password)}
-        />
-       
-       <Text style={styles.text}>{status}</Text>
-        <Button style={styles.Button} onPress={handleLogin} title='LOGIN'/>
+        placeholder="Password"
+        secureTextEntry={true}
+        value={password}
+        onChangeText={(password) => setPassword(password)}
+      />
+
+
+      <Button style={styles.Button} onPress={handleLogin} title='LOGIN' />
+
     </View>
   );
 }
- 
+
 const styles = StyleSheet.create({
   container: {
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"center",
-    alignItems:"center",
-    marginTop:100
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 100
   },
- 
-  TextInput:  {
-        height: 40,
-        margin:15,
-        width:250,
-        borderWidth: 1,
-        padding: 10,
-      },
 
- text:{
-  height: 40,
-  margin:15,
-  width:250,
-  padding: 10,
- },
+  TextInput: {
+    height: 40,
+    margin: 15,
+    width: 250,
+    borderWidth: 1,
+    padding: 10,
+  },
+
+  text: {
+    height: 40,
+    margin: 0,
+    //width: 20,
+    paddingTop: 5,
+    color: 'red',
+  },
   Button:
   {
-        height: 40,
-        borderWidth: 1,
-        marginTop:10,
-        padding: 10,
+    height: 40,
+    borderWidth: 1,
+    marginTop: 10,
+    padding: 10,
   }
 });
