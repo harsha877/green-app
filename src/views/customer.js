@@ -13,7 +13,7 @@ export default function Customer({ navigation }) {
 
     return (
         <KeyboardAvoidingView style={styles.container}>
-            {user == "" ? <CustomerLogin onSubmit={onSubmitHandler} /> : <CustomerHomeScreen onSubmitHandler = {onSubmitHandler} navigation = {navigation} />}
+            {user == "" ? <CustomerLogin onSubmit={onSubmitHandler} /> : <CustomerHomeScreen user = {user} onSubmitHandler = {onSubmitHandler} navigation = {navigation} />}
         </KeyboardAvoidingView>
     )
 }

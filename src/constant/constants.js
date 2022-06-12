@@ -23,9 +23,18 @@ export const CUSTOM_QUESTION_SUBMIT_TAG = 'click on Submit to end the survey';
 //templates
 
 export const QUIZ_TEMPLATE = {
-    customerID: 'd',
-    customerName: 'd',
-    quizName: 'd',
-    length: 0,
-    questions:[1]
-  };
+  customerID: '',
+  customerName: '',
+  quizName: '',
+  length: 0,
+  questions: []
+};
+
+export const QUESTION_TEMPLATE = {
+  question: '',
+  option1: '',
+  option2: '',
+  option3: '',
+  option4: '',
+  weight: [],
+}

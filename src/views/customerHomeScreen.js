@@ -3,13 +3,13 @@ import { View, Text, Button, ScrollView, SafeAreaView, StyleSheet } from 'react-
 import { concat } from "react-native-reanimated";
 import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
 
-export default function CustomerHomeScreen({ navigation, onSubmitHandler }) {
+export default function CustomerHomeScreen({ navigation, onSubmitHandler, user }) {
 
 
 
     const handleCreateQuiz = () => {
         
-        navigation.navigate('customer question');
+        navigation.navigate('customer question', {user} );
     }
 
     const handleViewQuizzes = () =>{
