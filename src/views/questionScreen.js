@@ -3,8 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import CustumeButton from "../components/button";
 import { USER_CUSTOM_QUIZ_HOMESCREEN, USER_CUSTOM_QUIZ_RESULTSCREEN } from "../constant/constants";
 
-export default function QuestionScreen({ navigation }) {
+export default function QuestionScreen({route,  navigation }) {
 
+    
     const RsultPage = () => {
         
         navigation.navigate(USER_CUSTOM_QUIZ_RESULTSCREEN);
