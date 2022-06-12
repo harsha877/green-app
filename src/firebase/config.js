@@ -30,9 +30,9 @@ export const readCollection = async (collectionName) => {
   });
 
   return collectioData;
-
 };
 
+//gets a dingle document have toprovide collection name and document name
 export async function readCollectionDocument(collectionName, documentName) {
   let rawsnapshot;
   await db.collection(collectionName)
@@ -48,20 +48,52 @@ export async function readCollectionDocument(collectionName, documentName) {
 
 };
 
-const docData = {
-  name: 'windsor university department of medicine',
-  username: 'uwindsordom',
-  password: 'uwindsordom',
-  orginization: 'university of windsor',
-}
+// const docData = {
+//   name: 'windsor toronto department of medicine',
+//   username: 'utorontodom',
+//   password: 'utorontodom',
+//   orginization: 'university of toronto',
+//   searchKey: 'windsor toronto department of medicine',
+// }
 
 
 //writes data to the collection takes the JSON, document name, collection name
 //example JSON
-// const docData = {
-//   quizName: 'Ada Lovelace',
-//   quizid: 30,
-// };
+const docData = {
+  customerID: 'uwindsordom',
+  customerName: 'windsor university department of medicine',
+  quizName: 'go green go water',
+  length: 3,
+  questions:[
+              {
+                question: 'question1',
+                option1: 'o1',
+                option2: 'o2',
+                option3: 'o3',
+                option4: 'o4',
+                weight: [1,2,3,4],
+              },
+              {
+                question: 'question2',
+                option1: 'o1',
+                option2: 'o2',
+                option3: 'o3',
+                option4: 'o4',
+                weight: [1,2,3,4],
+
+              },
+              {
+                question: 'question2',
+                option1: 'o1',
+                option2: 'o2',
+                option3: 'o3',
+                option4: 'o4',
+                weight: [1,2,3,4],
+
+              },
+            ]
+}
+
 // Usage writeCollection(docData, 'testrun', 'quizes');
 export const writeCollection = async (docData, docName, collectionName) => {
   var collectioData = [];
@@ -80,4 +112,25 @@ export const writeCollection = async (docData, docName, collectionName) => {
 
 };
 
-//writeCollection(docData, 'uwindsordom', 'customer');
+//rearch colletion takes document name and keyword
+export const search = async (collectionName, keyword) => {
+  keyword = keyword.toLocaleLowerCase();
+  if (keyword.length < 3) {
+    console.log("search key is too small");
+    return;
+  }
+  var collectioData = [];
+  const rawsnapshot = await db.collection(collectionName).get();
+
+  rawsnapshot.forEach((doc) => {
+    //console.log((doc.data()));
+    let docData = doc.data()
+    if (docData.searchKey.indexOf(keyword) != -1) {
+      collectioData.push(docData);
+    }
+  });
+  return collectioData;
+};
+
+//writeCollection(docData, 'go green go water' , 'quiz');
+//search('customer', 'toro').then( data => console.log(data))
