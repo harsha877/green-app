@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Button, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
+import { concat } from "react-native-reanimated";
 import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
 
 export default function CustomerHomeScreen({ navigation, onSubmitHandler }) {
@@ -7,6 +8,7 @@ export default function CustomerHomeScreen({ navigation, onSubmitHandler }) {
 
 
     const handleCreateQuiz = () => {
+        
         navigation.navigate('customer question');
     }
 

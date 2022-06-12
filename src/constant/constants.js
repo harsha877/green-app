@@ -1,6 +1,8 @@
 // Database collection names
 
-export const GREEN_DB_COLLECTION_QUIZES = 'quizes';
+import { exp } from "react-native/Libraries/Animated/Easing";
+
+export const GREEN_DB_COLLECTION_QUIZES = 'quiz';
 export const GREEN_DB_COLLECTION_CUSTOMER = 'customer';
 
 //Stack Navagation Screen Names
@@ -10,3 +12,20 @@ export const USER_CUSTOM_QUIZ_RESULTSCREEN = "Quiz Result";
 
 //todo need to decide on this variable
 export const GREEN_DB_COLLECTION_QUIZES_COLUMNS = ['CustomerID', 'Numberofquestions', 'QuizName', 'Action'];
+
+
+//screen Constants
+export const CUSTOM_QUESTION_HEAD_TAG = 'Enter the Questionnaire';
+export const CUSTOM_QUESTION_NEXT_TAG = 'click on Next to continue adding questions';
+export const CUSTOM_QUESTION_SUBMIT_TAG = 'click on Submit to end the survey';
+
+
+//templates
+
+export const QUIZ_TEMPLATE = {
+    customerID: 'd',
+    customerName: 'd',
+    quizName: 'd',
+    length: 0,
+    questions:[1]
+  };

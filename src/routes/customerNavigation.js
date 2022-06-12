@@ -16,10 +16,7 @@ export default function CustomerNavigator() {
         <Stack.Navigator>
             <Stack.Screen name='customer login' component={Customer} />
             <Stack.Screen name='customer question' component={QuizInput} />
-            
-            
-            
-            
+   
         </Stack.Navigator>
     
   );
