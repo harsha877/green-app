@@ -27,7 +27,7 @@ export default function QuizScreen({ navigation }) {
 
     const onPressQuiz = () => {
         
-        navigation.navigate(USER_CUSTOM_QUIZ_QUESTIONSCREEN);
+        navigation.navigate(USER_CUSTOM_QUIZ_QUESTIONSCREEN , {});
         
     };
     
