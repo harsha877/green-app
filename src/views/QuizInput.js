@@ -113,11 +113,12 @@ export default function QuizInput({ navigation, route }) {
       setFlag(true)
       let quizTemplateTemp = { ...QUIZ_TEMPLATE };
       quizTemplateTemp.quizName = id;
-      quizTemplateTemp.customerID = route.params.user.username
-      quizTemplateTemp.customerName = route.params.user.name
+      quizTemplateTemp.customerID = route.params.user.username;
+      quizTemplateTemp.customerName = route.params.user.name;
+      quizTemplateTemp.searchKey = route.params.user.name +' | '+ id;
       quizTemplateTemp.questions = [];
       quizTemplateTemp.length = 0;
-      setquizTemplate(quizTemplateTemp)
+      setquizTemplate(quizTemplateTemp);
       console.log(quizTemplateTemp);
     }
 

@@ -1,5 +1,5 @@
 import * as firebase from "firebase";
-import { GREEN_DB_COLLECTION_CUSTOMER } from "../constant/constants";
+import { GREEN_DB_COLLECTION_CUSTOMER, GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
 //import { doc } from 'firebase/firestore';
 //import firestore from '@react-native-firebase/firestore';
 //import { getFireStrore, collection, getDocs } from 'firebase/firestore';
@@ -112,7 +112,7 @@ export const writeCollection = async (docData, docName, collectionName) => {
 
 };
 
-//rearch colletion takes document name and keyword
+//search colletion takes document name and keyword
 export const search = async (collectionName, keyword) => {
   keyword = keyword.toLocaleLowerCase();
   if (keyword.length < 3) {
@@ -132,5 +132,26 @@ export const search = async (collectionName, keyword) => {
   return collectioData;
 };
 
+//search colletion takes customerID
+export const searchQuizesForCustomer = async (customerID) => {
+  customerID = customerID.toLocaleLowerCase();
+  if (customerID.length < 3) {
+    console.log("search key is too small");
+    return;
+  }
+  var collectioData = [];
+  const rawsnapshot = await db.collection(GREEN_DB_COLLECTION_QUIZES).get();
+
+  rawsnapshot.forEach((doc) => {
+    //console.log((doc.data()));
+    let docData = doc.data()
+    if (docData.customerID === customerID) {
+      collectioData.push(docData);
+    }
+  });
+  return collectioData;
+};
+
 //writeCollection(docData, 'go green go water' , 'quiz');
-//search('customer', 'toro').then( data => console.log(data))
+//search('quiz', 'wind').then( data => console.log(data))
+//searchQuizesForCustomer('utorontodom').then( data => console.log(data));

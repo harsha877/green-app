@@ -26,6 +26,7 @@ export const QUIZ_TEMPLATE = {
   customerID: '',
   customerName: '',
   quizName: '',
+  searchKey: '',
   length: 0,
   questions: []
 };
