@@ -119,7 +119,7 @@ export default function QuizInput({ navigation, route }) {
       quizTemplateTemp.questions = [];
       quizTemplateTemp.length = 0;
       setquizTemplate(quizTemplateTemp);
-      console.log(quizTemplateTemp);
+      //console.log(quizTemplateTemp);
     }
 
   }
@@ -138,7 +138,7 @@ export default function QuizInput({ navigation, route }) {
         <TextInput multiline style={styles.TextInput} placeholder="Question" value={question} onChangeText={(text) => setQuestion(text)} />
         <TextInput style={styles.TextInput} placeholder="option 1" value={option1} onChangeText={(text) => setOption1(text)} />
         <View style={{ flexDirection: 'row' }} >
-          <Text style={styles.label}>priority</Text>
+          <Text style={styles.label}>Weight</Text>
           <Picker onValueChange={(itemValue, itemIndex) => priorityChangeHandler(itemValue, 'q1')} style={styles.picker} selectedValue={newpriority[0]}>
 
             {priority.map(key => (
@@ -148,7 +148,7 @@ export default function QuizInput({ navigation, route }) {
         </View>
         <TextInput style={styles.TextInput} placeholder="option 2" value={option2} onChangeText={(text) => setOption2(text)} />
         <View style={{ flexDirection: 'row' }} >
-          <Text style={styles.label}>priority</Text>
+          <Text style={styles.label}>Weight</Text>
           <Picker onValueChange={(itemValue, itemIndex) => priorityChangeHandler(itemValue, 'q2')} style={styles.picker} selectedValue={newpriority[1]}>
             {priority.map(key => (
               <Picker.Item label={key} value={key} key={key} />
@@ -157,7 +157,7 @@ export default function QuizInput({ navigation, route }) {
         </View>
         <TextInput style={styles.TextInput} placeholder="option 3" value={option3} onChangeText={(text) => setOption3(text)} />
         <View style={{ flexDirection: 'row' }} >
-          <Text style={styles.label}>priority</Text>
+          <Text style={styles.label}>Weight</Text>
           <Picker onValueChange={(itemValue, itemIndex) => priorityChangeHandler(itemValue, 'q3')} style={styles.picker} selectedValue={newpriority[2]}>
             {priority.map(key => (
               <Picker.Item label={key} value={key} key={key} />
@@ -166,7 +166,7 @@ export default function QuizInput({ navigation, route }) {
         </View>
         <TextInput style={styles.TextInput} placeholder="option 4" value={option4} onChangeText={(text) => setOption4(text)} />
         <View style={{ flexDirection: 'row' }} >
-          <Text style={styles.label}>priority</Text>
+          <Text style={styles.label}>Weight</Text>
           <Picker onValueChange={(itemValue, itemIndex) => priorityChangeHandler(itemValue, 'q4')} style={styles.picker} selectedValue={newpriority[3]}>
             {priority.map(key => (
               <Picker.Item label={key} value={key} key={key} />

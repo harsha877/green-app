@@ -7,6 +7,7 @@ import {USER_CUSTOM_QUIZ_HOMESCREEN, USER_CUSTOM_QUIZ_QUESTIONSCREEN, USER_CUSTO
     from "../constant/constants";
 import Customer from "../views/customer";
 import QuizInput from "../views/QuizInput";
+import CustomerViewScreen from "../views/customerViewScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function CustomerNavigator() {
         <Stack.Navigator>
             <Stack.Screen name='customer login' component={Customer} />
             <Stack.Screen name='customer question' component={QuizInput} />
+            <Stack.Screen name='customer view' component={CustomerViewScreen} />
    
         </Stack.Navigator>
     
