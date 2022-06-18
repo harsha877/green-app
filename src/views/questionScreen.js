@@ -13,7 +13,8 @@ export default function QuestionScreen({ route, navigation }) {
     const [color, setColor] = useState(['white', 'white', 'white', 'white']);
 
     const ResultPage = () => {
-        let sum = weights.reduce((pSum, element) => pSum + element, 0);
+        let sum = weights.reduce((pSum, element) => pSum + parseInt(element), 0);
+        //console.log(sum);
         let result = ((sum / (4 * quiz.length)) * 100);
         console.log("user Scored: " + result + "%");
         navigation.navigate(USER_CUSTOM_QUIZ_RESULTSCREEN, { result });
@@ -21,6 +22,7 @@ export default function QuestionScreen({ route, navigation }) {
     };
 
     const navigate = (flag) => {
+        setColor(['white', 'white', 'white', 'white']);
         if (flag == 1) {
             setCurrentQuestion(quiz.questions[currentquestionNumber]);
             setCurrentquestionNumber(currentquestionNumber + 1);
