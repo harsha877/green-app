@@ -1,10 +1,13 @@
-import * as firebase from "firebase";
-import { GREEN_DB_COLLECTION_CUSTOMER, GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
-//import { doc } from 'firebase/firestore';
-//import firestore from '@react-native-firebase/firestore';
-//import { getFireStrore, collection, getDocs } from 'firebase/firestore';
+//==========================================
+// Title:  Config file to connect to database
+// Author: Anusha
+//==========================================
 
-// Your web app's Firebase configuration
+import * as firebase from "firebase";
+import { GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
+
+
+//Firebase configurations
 const firebaseConfig = {
   apiKey: "AIzaSyCHhqxWOL288qM4E33W85bzf5Y7-LP7q6s",
   authDomain: "green-db-7954e.firebaseapp.com",
@@ -14,25 +17,25 @@ const firebaseConfig = {
   appId: "1:817637952130:web:4c2ecbe03d01ecaebe429b"
 };
 
-// Initialize Firebase
+// To Initialize the Firebase with the above functionalities
 const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
+//Database object which is used to connect to the db directly, to perform crud operations
 export const db = firebase.firestore(app);
 
-//read colletion takes document name
+//Read colletion takes document name as an argument and return promis of the respective data
 export const readCollection = async (collectionName) => {
   var collectioData = [];
   const rawsnapshot = await db.collection(collectionName).get();
 
   rawsnapshot.forEach((doc) => {
-    //console.log((doc.data()));
     collectioData.push(doc.data());
   });
 
   return collectioData;
 };
 
-//gets a dingle document have toprovide collection name and document name
+//returns a single document Takes document name and collection name as arguments 
 export async function readCollectionDocument(collectionName, documentName) {
   let rawsnapshot;
   await db.collection(collectionName)
@@ -48,6 +51,65 @@ export async function readCollectionDocument(collectionName, documentName) {
 
 };
 
+
+// Usage writeCollection(docData, 'testrun', 'quizes');
+
+export const writeCollection = async (docData, docName, collectionName) => {
+  var collectioData = [];
+
+  db.collection(collectionName)
+    .doc(docName)
+    .set(docData)
+    .then(() => {
+      console.log('Document Added');
+      return 1;
+    }).catch((e) => {
+      console.log(e);
+      return 0;
+    });
+
+};
+
+//search colletion takes document name and keyword
+export const search = async (collectionName, keyword) => {
+  keyword = keyword.toLocaleLowerCase();
+  if (keyword.length < 3) {
+    console.log("search key is too small");
+    return;
+  }
+  var collectioData = [];
+  const rawsnapshot = await db.collection(collectionName).get();
+
+  rawsnapshot.forEach((doc) => {
+    //console.log((doc.data()));
+    let docData = doc.data()
+    if ((docData.searchKey.toLocaleLowerCase()).indexOf(keyword) != -1) {
+      collectioData.push(docData);
+    }
+  });
+  return collectioData;
+};
+
+//search colletion takes customerID
+export const searchQuizesForCustomer = async (customerID) => {
+  customerID = customerID.toLocaleLowerCase();
+  if (customerID.length < 3) {
+    console.log("search key is too small");
+    return;
+  }
+  var collectioData = [];
+  const rawsnapshot = await db.collection(GREEN_DB_COLLECTION_QUIZES).get();
+
+  rawsnapshot.forEach((doc) => {
+    //console.log((doc.data()));
+    let docData = doc.data()
+    if (docData.customerID === customerID) {
+      collectioData.push(docData);
+    }
+  });
+  return collectioData;
+};
+
 // const docData = {
 //   name: 'windsor toronto department of medicine',
 //   username: 'utorontodom',
@@ -56,13 +118,13 @@ export async function readCollectionDocument(collectionName, documentName) {
 //   searchKey: 'windsor toronto department of medicine',
 // }
 
-
 //writes data to the collection takes the JSON, document name, collection name
 //example JSON
 const docData = {
   customerID: 'uwindsordom',
   customerName: 'windsor university department of medicine',
   quizName: 'go green go water',
+  searchKey: 'windsor university department of medicine | go green go water',
   length: 3,
   questions:[
               {
@@ -93,64 +155,6 @@ const docData = {
               },
             ]
 }
-
-// Usage writeCollection(docData, 'testrun', 'quizes');
-export const writeCollection = async (docData, docName, collectionName) => {
-  var collectioData = [];
-
-
-  db.collection(collectionName)
-    .doc(docName)
-    .set(docData)
-    .then(() => {
-      console.log('Document Added');
-      return 1;
-    }).catch((e) => {
-      console.log(e);
-      return 0;
-    });
-
-};
-
-//search colletion takes document name and keyword
-export const search = async (collectionName, keyword) => {
-  keyword = keyword.toLocaleLowerCase();
-  if (keyword.length < 3) {
-    console.log("search key is too small");
-    return;
-  }
-  var collectioData = [];
-  const rawsnapshot = await db.collection(collectionName).get();
-
-  rawsnapshot.forEach((doc) => {
-    //console.log((doc.data()));
-    let docData = doc.data()
-    if (docData.searchKey.indexOf(keyword) != -1) {
-      collectioData.push(docData);
-    }
-  });
-  return collectioData;
-};
-
-//search colletion takes customerID
-export const searchQuizesForCustomer = async (customerID) => {
-  customerID = customerID.toLocaleLowerCase();
-  if (customerID.length < 3) {
-    console.log("search key is too small");
-    return;
-  }
-  var collectioData = [];
-  const rawsnapshot = await db.collection(GREEN_DB_COLLECTION_QUIZES).get();
-
-  rawsnapshot.forEach((doc) => {
-    //console.log((doc.data()));
-    let docData = doc.data()
-    if (docData.customerID === customerID) {
-      collectioData.push(docData);
-    }
-  });
-  return collectioData;
-};
 
 //writeCollection(docData, 'go green go water' , 'quiz');
 //search('quiz', 'wind').then( data => console.log(data))

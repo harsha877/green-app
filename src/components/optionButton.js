@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function CustumeButton({name, onPressHandler, type, colorsuper}){
+export default function OptionButton({name, onPressHandler, type, data}){
 
-    const [color,setColor] = useState(colorsuper==undefined ? '#1ca3ec': colorsuper );
     if (type === 'button') {
         type =  styles.button
     }else{
         type =  styles.list
     }
 
-
-    
+    //console.log(JSON.stringify(data.quizName));
     return(
-        <TouchableOpacity onPress={ () => {onPressHandler()}}>
-            <View style = {{...type, backgroundColor: color}}>
+        <TouchableOpacity onPress={ () => onPressHandler(data.quizName, data.customerID)}>
+            <View style = {type}>
                 <Text style = {styles.buttonText}>
                     {name}
                 </Text>
@@ -39,11 +37,11 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     list: {
-        borderRadius: 20,
+        borderTopEndRadius: 10,
         backgroundColor: '#1992d4',
         paddingVertical: 10,
         paddingHorizontal: 10,
-        margin: 4,
+        margin: 10,
         //width: '',
         borderColor: 'black',
         //display: 'block',

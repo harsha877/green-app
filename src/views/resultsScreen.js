@@ -7,19 +7,22 @@ import { readCollection } from "../firebase/config";
 import CustumeButton from "../components/button";
 import CustumeTable from "../components/table";
 
-export default function ResultsScreen({ navigation }) {
+export default function ResultsScreen({ route, navigation }) {
 
+    const [result,setResult] = useState(route.params.result);
     const returntoHome = () => {
         
         navigation.navigate(USER_CUSTOM_QUIZ_HOMESCREEN);
         
     };
+    console.log(route.params.result);
 
     return (
         <View>
+            
+            <CustumeButton name = 'Home' onPressHandler = {returntoHome} type = 'button' />
             <Text>
-                result screen
-                <CustumeButton name = 'Home' onPressHandler = {returntoHome} type = 'button' />
+                Congrats you Scored {result}%
             </Text>
         </View>
     )

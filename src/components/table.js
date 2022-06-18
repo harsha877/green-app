@@ -6,14 +6,16 @@ import Row from "./row";
 export default function CustumeTable({data , onPressHandler}){
 
     return (
+        
         <FlatList
-                style = {styles.view}
+                
                 nestedScrollEnabled={true}
                 data = {data}
                 renderItem = { ({item}) => 
                         (<Row onPressHandler = {onPressHandler} row= {item} />)}
                         
         />
+        
         );
 };
 
@@ -23,5 +25,9 @@ const styles = StyleSheet.create({
         borderColor : 'black',
         margin: 1,
         color: 'white',
+        
     },
 });
+
+
+//style = {styles.view}

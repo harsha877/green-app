@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, Button, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
-import { concat } from "react-native-reanimated";
-import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
+import { searchQuizesForCustomer } from "../firebase/config";
+
 
 export default function CustomerHomeScreen({ navigation, onSubmitHandler, user }) {
 
-
+    const [quiz, setQuiz] = useState();
 
     const handleCreateQuiz = () => {
         
@@ -14,6 +14,14 @@ export default function CustomerHomeScreen({ navigation, onSubmitHandler, user }
 
     const handleViewQuizzes = () =>{
         console.log("view quizzes");
+        searchQuizesForCustomer(user.username).then( 
+            cusQuiz => {
+                //console.log(cusQuiz);
+                setQuiz(cusQuiz);
+                navigation.navigate('customer view', {user});
+            });
+        
+        
     }
 
     return (
