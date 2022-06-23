@@ -11,28 +11,22 @@ const Option = props => {
       score: Score,
     });
   };
-  console.log(score);
-  let correctAnswerIdx = Questions.questions[props.qnIndex].correctIndex;
+  // console.log(props.optionIdx);
+  let calculateIdx = +props.optionIdx;
+  console.log(props.qnIndex);
   return (
     <View style={[styles.Option]}>
       <TouchableOpacity
         onPress={() => {
-          props.optionIdx === correctAnswerIdx
-            ? updateScore(1)
-            : updateScore(0);
-          if (props.qnIndex + 1 != Questions.questions.length) {
+          updateScore(calculateIdx);
+          if (props.qnIndex + 1 >= Questions.questions.length) {
+            console.log('End of Questions');
+            props.navigation.navigate('WaterUsageScreen');
+          } else {
             props.navigation.navigate('QuestionScreen', {
-              index: props.qnIndex + 1,
+              index: props.qnIndex+1,
             });
           }
-        //   if (props.qnIndex + 1 >= Questions.questions.length) {
-        //     console.log('End of Quiz');
-        //     props.navigation.navigate('CongratsScreen');
-        //   } else {
-        //     props.navigation.navigate('QuestionScreen', {
-        //       index: props.qnIndex + 1,
-        //     });
-        //   }
         }}>
         <Text style={styles.OptionText}>{props.value}</Text>
       </TouchableOpacity>
@@ -44,15 +38,7 @@ export default Option;
 
 const styles = StyleSheet.create({
   Option: {
-    borderColor: 'black',
-    borderWidth: 2,
-    margin: 20,
-    marginBottom: 3,
-    borderRadius: 20,
-    height: 65,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#003f69',
+    // textAlign: 'center',
   },
   OptionText: {
     fontSize: 20,

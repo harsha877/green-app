@@ -12,9 +12,11 @@ import Customer from '../views/customer';
 import QuizScreen from '../views/quizScreen';
 import QuizScreenNavigator from './quizScreenNavigation';
 import CustomerNavigator from './customerNavigation';
+import WaterUsageNavigator from './waterUsageNavigation';
 
 //Screen names
-const homeName = "QuestionScreen";
+const homeName = "Question Screen";
+const waterUsage = "Water Usage Screen";
 const loginName = "Customer Login";
 const quizName = "Quiz";
 
@@ -44,15 +46,12 @@ function MainContainer() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           
-          //tabBarStyle: { position: 'absolute' },
-          //tabBarIconStyle: { padding: 10}, //this effects only icon
           tabBarLabelStyle: {paddingBottom: 10}, // this effects only label
-          //tabBarItemStyle: { paddingBottom: 0}, // this a single option both icon and text
           tabBarStyle: { height: 60 },
           tabBarHideOnKeyboard : true,
         })}>
 
-        <Tab.Screen name={homeName} component={HomeScreen} initialParams={{index: 0}}/>
+        <Tab.Screen name={homeName}  options={{headerShown: false}} component={WaterUsageNavigator}/>
         <Tab.Screen name={loginName} options={{headerShown: false}} component={CustomerNavigator} />
         <Tab.Screen name={quizName} options={{headerShown: false}} component={QuizScreenNavigator} />
 

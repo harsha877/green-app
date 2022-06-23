@@ -1,70 +1,82 @@
-import * as React from "react"
-import { View, Text, StyleSheet } from "react-native"
-import TypeWriter from "react-native-typewriter"
-import Questions from "../json/questions.json"
-import Option from "../components/options.js"
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import TypeWriter from 'react-native-typewriter';
+import Questions from '../json/questions.json';
+import Option from '../components/options.js';
+import CustumeButton from '../components/button';
 
-export default function HomeScreen({ route, navigation }) {
-	const { index } = route.params
-	return (
-		<View>
-			<TypeWriter style={styles.typeWriter} typing={1}>
-				Water Footprint Calculator
-			</TypeWriter>
-			<View
-				style={{
-					justifyContent: "space-between",
-					flexDirection: "row",
-				}}
-			>
-				<Text style={styles.questionNo}>
-					{index + 1}/{Questions.questions.length}
-				</Text>
-			</View>
-			<Text style={styles.Question}>
-				{Questions.questions[index].question}
-			</Text>
-			{Questions.questions[index].answers.map((option, i) => (
-				<Option
-					value={option}
-					navigation={navigation}
-					optionIdx={i}
-					qnIndex={index}
-					key={i}
-				/>
-			))}
-		</View>
-	)
+export default function HomeScreen({route, navigation}) {
+  const {index} = route.params;
+  return (
+    <ScrollView>
+      <TypeWriter style={styles.typeWriter} typing={1}>
+        Water Footprint Calculator
+      </TypeWriter>
+      <View style={styles.container}>
+        <Text style={styles.questionNo}>
+          {index + 1}/{Questions.questions.length}
+        </Text>
+        <Text style={styles.Question}>
+          {Questions.questions[index].question}
+        </Text>
+        {Questions.questions[index].answers.map(user => {
+          let keys = Object.keys(user);
+          return (
+            <Text style={styles.paragraph}>
+              {keys.map(key => {
+                return (
+                  <Option
+                    value={`${key}`}
+                    optionIdx={`${user[key]}`}
+                    navigation={navigation}
+                    qnIndex={index}
+                  />
+                );
+              })}
+            </Text>
+          );
+        })}
+      </View>
+    </ScrollView>
+  );
 }
 const styles = StyleSheet.create({
-	typeWriter: {
-		color: "#409cd0",
-		fontSize: 30,
-		margin: 15,
-		fontWeight: "500",
-		textAlign: "center",
-	},
-	questionNo: {
-		color: "#409cd0",
-		fontSize: 20,
-		margin: 20,
-	},
-	Question: {
-		fontSize: 20,
-		margin: 20,
-	},
-	nextButton: {
-		height: 50,
-		width: "10%",
-		backgroundColor: "#3700B3",
-		justifyContent: "center",
-		alignItems: "center",
-		alignSelf: "flex-end",
-		margin: 20,
-		borderRadius: 15,
-	},
-	nextText: {
-		color: "white",
-		fontWeight: "900",
-	},
-})
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 2,
+  },
+  paragraph: {
+    borderColor: 'black',
+    borderWidth: 1,
+    margin: 20,
+    marginBottom: 3,
+    borderRadius: 20,
+    // height: 65,
+    padding: 20,
+    backgroundColor: '#003f69',
+    textAlign: 'center',
+    color: '#000000',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    fontSize: 18,
+  },
+  typeWriter: {
+    color: '#409cd0',
+    fontSize: 25,
+    margin: 15,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  questionNo: {
+    color: '#409cd0',
+    fontSize: 18,
+    margin: 5,
+  },
+  Question: {
+    fontSize: 18,
+    margin: 5,
+  },
+});

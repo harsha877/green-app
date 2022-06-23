@@ -19,6 +19,9 @@ export const CUSTOM_QUESTION_HEAD_TAG = 'Enter the Questionnaire';
 export const CUSTOM_QUESTION_NEXT_TAG = 'click on Next to continue adding questions';
 export const CUSTOM_QUESTION_SUBMIT_TAG = 'click on Submit to end the survey';
 
+// Water Usage constants 
+export const Home_Screen = 'QuestionScreen';
+export const Water_Usage_Screen = 'WaterUsageScreen';
 
 //templates
 
