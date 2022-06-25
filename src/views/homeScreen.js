@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native"
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity} from "react-native"
 import Svg, { Path } from "react-native-svg"
 import TypeWriter from "react-native-typewriter"
 import Questions from "../json/questions.json"
@@ -23,18 +23,19 @@ export default function HomeScreen({ route, navigation }) {
 				{Questions.questions[index].answers.map((user) => {
 					let keys = Object.keys(user)
 					return (
-						<Text style={styles.paragraph}>
+						<TouchableOpacity style={styles.paragraph} key = {keys[0]}>
 							{keys.map((key) => {
 								return (
 									<Option
 										value={`${key}`}
+										key={`${key}`}
 										optionIdx={`${user[key]}`}
 										navigation={navigation}
 										qnIndex={index}
 									/>
 								)
 							})}
-						</Text>
+						</TouchableOpacity>
 					)
 				})}
 			</View>
