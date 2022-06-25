@@ -4,7 +4,7 @@ import { Button } from "react-native-web";
 import CustumeButton from "../components/button";
 import CustumeTable from "../components/table";
 import { GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
-import { searchQuizesForCustomer, writeCollection } from "../firebase/config";
+import { search, searchQuizesForCustomer, writeCollection } from "../firebase/config";
 
 
 export default function CustomerViewScreen({ navigation, route }) {
@@ -137,11 +137,26 @@ export default function CustomerViewScreen({ navigation, route }) {
         }
     }
 
+    const searchHandler = (text) => {
+        
+        console.log(text);
+        if( text.length >= 3){
+            search(GREEN_DB_COLLECTION_QUIZES, text).then(
+                (data) => {
+                    setQuizzes(data);
+                    viewList();
+                    showQuestions();
+                }
+            );
+        }
+    }
+
     return (
         <ScrollView >
             <Text>Customer View page</Text>
 
             <View style={styles.list}>
+            <TextInput style = {styles.TextInput} onChangeText = { (text => searchHandler(text))} > </TextInput>
                 <CustumeButton name="refresh" onPressHandler={getData} type="button" />
                 <Text>{viewList()}</Text>
             </View>
@@ -187,7 +202,19 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         borderRadius: 10,
-    }
+    },
+    TextInput: {
+        //height: 40,
+        margin: 15,
+        width: 200,
+        borderWidth: 1,
+        padding: 0,
+        borderRadius: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        margin: 10,
+        alignSelf: "center",
+    },
 });
 
 
