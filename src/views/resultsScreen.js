@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, Button, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import { GREEN_DB_COLLECTION_QUIZES, USER_CUSTOM_QUIZ_HOMESCREEN } from "../constant/constants";
 import { readCollection } from "../firebase/config";
 // import bottomNav from './styles/bottomNav';
@@ -18,12 +18,26 @@ export default function ResultsScreen({ route, navigation }) {
     console.log(route.params.result);
 
     return (
-        <View>
+        <View style={styles.container}>
             
             <CustumeButton name = 'Home' onPressHandler = {returntoHome} type = 'button' />
-            <Text>
+            <Text style = {styles.TextInput}>
                 Congrats you Scored {result}%
             </Text>
         </View>
     )
 }
+const styles = StyleSheet.create({
+    container :{
+        flex: 1,
+		justifyContent: "center",
+		backgroundColor: "#063f5c",
+		padding: 2,
+    },
+    TextInput: {
+        color: "#ffffff",
+		fontSize: 20,
+		margin: 5,
+        textAlign: 'center',
+    },
+});

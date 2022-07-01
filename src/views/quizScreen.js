@@ -59,14 +59,13 @@ export default function QuizScreen({ navigation }) {
 const styles = StyleSheet.create({
     TextInput: {
         //height: 40,
-        margin: 15,
-        width: 200,
+        margin: 10,
+        width: 230,
         borderWidth: 1,
         padding: 0,
         borderRadius: 30,
         paddingVertical: 10,
         paddingHorizontal: 10,
-        margin: 10,
         alignSelf: "center",
     },
     navigation:{

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     button: {
         padding: 0,
         borderRadius: 50,
-        backgroundColor: '#1ca3ec',
+        backgroundColor: "#003f69",
         paddingVertical: 10,
         paddingHorizontal: 10,
         margin: 10,
@@ -34,13 +34,14 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     buttonText: {
-        color: 'white',
-        fontSize: 16,
-        textAlign: "center"
+        color: "#ffffff",
+		fontSize: 18,
+        textAlign: "center",
+        padding: 5,
     },
     list: {
         borderRadius: 20,
-        backgroundColor: '#1992d4',
+        backgroundColor: "#003f69",
         paddingVertical: 10,
         paddingHorizontal: 10,
         margin: 4,

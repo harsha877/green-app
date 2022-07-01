@@ -24,11 +24,12 @@ const styles = StyleSheet.create({
     button: {
         padding: 0,
         borderRadius: 50,
-        backgroundColor: '#1ca3ec',
+        backgroundColor: "#003f69",
         paddingVertical: 10,
         paddingHorizontal: 10,
         margin: 10,
         width: 125,
+        height: 65,
         alignSelf: "center",
     },
     buttonText: {
@@ -37,11 +38,12 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     list: {
-        borderTopEndRadius: 10,
-        backgroundColor: '#1992d4',
+        borderRadius: 10,
+        backgroundColor: "#003f69",
         paddingVertical: 10,
         paddingHorizontal: 10,
         margin: 10,
+        height: 65,
         //width: '',
         borderColor: 'black',
         //display: 'block',

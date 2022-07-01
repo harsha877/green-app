@@ -90,10 +90,10 @@ export default function QuestionScreen({ route, navigation }) {
     return (
         <View>
             <View>
-                <Text>
+                <Text style={styles.questionNo}>
                     {currentquestionNumber}/{quiz.length}
                 </Text>
-                <Text>
+                <Text style={styles.Question}>
                     {currentquestion.question}
                 </Text>
             </View>
@@ -124,12 +124,31 @@ export default function QuestionScreen({ route, navigation }) {
 
 const styles = StyleSheet.create({
     options: {
-        borderRadius: 20,
         margin: 0,
-        padding: 0
+        padding: 0,
+		margin: 30,
+		marginBottom: 3,
+		borderRadius: 25,
+		backgroundColor: "#42bff5",
+		fontSize: 18,
+		textAlign: "center",
     },
     navigation: {
         justifyContent: 'space-between',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 30
     },
+    questionNo: {
+		color: "#003f69",
+		fontSize: 18,
+		margin: 5,
+	},
+    Question: {
+		fontSize: 20,
+		margin: 5,
+		fontWeight: "500",
+        textAlign: 'center',
+	},
 })
