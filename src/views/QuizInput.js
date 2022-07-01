@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     width: 73,
     //padding: 10,
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "vlack",
 
   },
 });

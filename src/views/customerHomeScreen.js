@@ -26,10 +26,10 @@ export default function CustomerHomeScreen({ navigation, onSubmitHandler, user }
 
     return (
         <View style={styles.container}>
-            <Text style={styles.Question}>Customer Homepage</Text>
-                <Button onPress={handleCreateQuiz} title='Create Quiz' />
-                <Button onPress={handleViewQuizzes} title='View Quizzes' />
-                <Button onPress={() => onSubmitHandler("")} title='Log Out' />
+            <Text>Customer Homepage</Text>
+            <Button  onPress={handleCreateQuiz} title='Create Quiz' />
+            <Button  onPress={handleViewQuizzes} title='View Quizzes' />
+            <Button  onPress={() => onSubmitHandler("")} title='Log Out' />
         </View>
     )
 }
@@ -40,14 +40,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 30,
-    },
-    Question: {
-		fontSize: 20,
-		margin: 5,
-		fontWeight: "500",
-        textAlign: 'center',
-	}
+        marginTop: 30
+    }
 });
 
 
