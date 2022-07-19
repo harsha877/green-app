@@ -27,7 +27,7 @@ const WaterUsageScreen = () => {
 				Water Usage: {score} litres/day
 			</Text>
 			<Text style={styles.resultText1}>
-				Canada Average Water Usage: 1022 litres/day
+				Canada Average Water Usage: 2432 litres/day
 			</Text>
 			<View style={styles.bottom}>
 				<View style={styles.box}>

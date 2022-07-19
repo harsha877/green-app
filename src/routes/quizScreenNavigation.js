@@ -13,9 +13,9 @@ export default function QuizScreenNavigator() {
   return (
     
         <Stack.Navigator>
-            <Stack.Screen name={USER_CUSTOM_QUIZ_HOMESCREEN} component={QuizScreen} />
-            <Stack.Screen name={USER_CUSTOM_QUIZ_RESULTSCREEN} component={ResultsScreen} />
-            <Stack.Screen name={USER_CUSTOM_QUIZ_QUESTIONSCREEN} component={QuestionScreen} />
+            <Stack.Screen name={USER_CUSTOM_QUIZ_HOMESCREEN} options={{headerShown: false}} component={QuizScreen} />
+            <Stack.Screen name={USER_CUSTOM_QUIZ_RESULTSCREEN} options={{headerShown: false}} component={ResultsScreen} />
+            <Stack.Screen name={USER_CUSTOM_QUIZ_QUESTIONSCREEN} options={{headerShown: false}} component={QuestionScreen} />
             
             
             
