@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "#003f69",
 		fontSize: 18,
 		textAlign: "center",
+		paddingHorizontal: 30,
 	},
 	typeWriter: {
 		color: "#2471A3",

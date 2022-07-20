@@ -11,7 +11,7 @@ export default function WaterUsageNavigation() {
   return (
     
         <Stack.Navigator>
-            <Stack.Screen name={Home_Screen} initialParams={{index: 0}}  component={HomeScreen}/>
+            <Stack.Screen name={Home_Screen} options={{headerShown: false}} initialParams={{index: 0}}  component={HomeScreen}/>
             <Stack.Screen name={Water_Usage_Screen} component={WaterUsageScreen} options={{headerShown: false}} />
         </Stack.Navigator>
     
