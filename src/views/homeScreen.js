@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#ecf0f1",
 		padding: 2,
+		marginTop: 20,
 	},
 	paragraph: {
 		borderColor: "black",
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
 		margin: 30,
 		marginBottom: 3,
 		borderRadius: 25,
-		height: 55,
+		height: 60,
 		backgroundColor: "#003f69",
 		fontSize: 18,
 		textAlign: "center",
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
 	typeWriter: {
 		color: "#2471A3",
 		fontSize: 25,
-		margin: 15,
+		marginTop: 40,
 		fontWeight: "500",
 		textAlign: "center",
 	},
@@ -107,7 +108,6 @@ const styles = StyleSheet.create({
 		margin: 5,
 		fontWeight: "500",
 	},
-	top: {},
 	bottom: {
 		position: "absolute",
 		width: Dimensions.get("screen").width,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
 	box: {
 		backgroundColor: "#2471A3",
 		height: 80,
-		marginTop: 110,
+		marginTop: 250,
 	},
 	bottomWavy: {
 		position: "absolute",
