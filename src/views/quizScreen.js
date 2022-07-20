@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
 	navigation: {
 		justifyContent: "space-between",
 		flexDirection: "row",
+		marginTop: 40,
 	},
 })
 

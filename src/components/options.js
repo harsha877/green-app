@@ -4,7 +4,7 @@ import Questions from "../json/questions.json"
 import { useStateValue } from "../views/stateProvider"
 
 const Option = (props) => {
-	const [{ score }, dispatch] = useStateValue()
+	//const [{ score }, dispatch] = useStateValue()
 	const updateScore = (Score) => {
 		dispatch({
 			type: "UPDATE_SCORE",
@@ -56,5 +56,6 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: "white",
 		textAlign: "center",
+		marginTop: 8,
 	},
 })

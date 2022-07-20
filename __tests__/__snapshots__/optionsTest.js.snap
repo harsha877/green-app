@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Option component snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+    ]
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 20,
+          "textAlign": "center",
+        }
+      }
+    />
+  </View>
+</View>
+`;
