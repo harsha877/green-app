@@ -34,6 +34,7 @@ describe("Quiz Screen QueryTesting",()=>{
         expect(NavigationStyles).toStrictEqual({
             justifyContent: "space-between",
 		    flexDirection: "row",
+            marginTop: 40,
         });})
 
         test("Testing Styles",()=>{

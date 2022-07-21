@@ -1,0 +1,82 @@
+{
+	"questions": [
+		{
+			"question": "How long is the average shower in your household?",
+			"type": "HouseHold",
+			"answers": [
+				{ "Under 5 min": 200 },
+				{ "5-10 min": 300 },
+				{ "11-15 min": 400 },
+				{ "Over 15 min": 500 }
+			]
+		},
+		{
+			"question": "Do you take baths? If so, how often?",
+			"type": "Personal",
+			"answers": [
+				{ "1 bath per day": 100 },
+				{ "2 baths per day": 130 },
+				{ "3 baths per day": 180 },
+				{ "No": 0 }
+			]
+		},
+		{
+			"question": "Do you have low-flow shower heads?",
+			"type": "Personal",
+			"answers": [{ "yes": 210 }, { "no": 250 }, { "some": 0 }]
+		},
+		{
+			"question": "How long do you leave your bathroom faucets running each day?(Answer for your entire household and include brushing your teeth and shaving.)",
+			"type": "Personal",
+			"answers": [
+				{ "Under 5 min": 320 },
+				{ "5-15 min": 340 },
+				{ "15-25 min": 350 },
+				{ "Over 25 min": 390 }
+			]
+		},
+		{
+			"question": "How long do you leave the kitchen faucet running each day?(Answer for your entire household and include everything but washing dishes.)",
+			"type": "Personal",
+			"answers": [
+				{ "Under 5 min": 320 },
+				{ "5-15 min": 340 },
+				{ "15-25 min": 350 },
+				{ "Over 25 min": 390 }
+			]
+		},
+		{
+			"question": "Does your kitchen sink have a low-flow faucet?",
+			"type": "Personal",
+			"answers": [{ "yes": 210 }, { "no": 10 }]
+		},
+		{
+			"question": "Do you let it mellow?",
+			"type": "Personal",
+			"answers": [{ "ofCourse": 210 }, { "sometimes": 100 }, { "no": 10 }]
+		},
+		{
+			"question": "Do you have low-flow toilets?",
+			"type": "Personal",
+			"answers": [{ "yes": 210 }, { "no": 10 }, { "sometimes": 100 }]
+		},
+		{
+			"question": "How do you wash your dishes? ",
+			"type": "Personal",
+			"answers": [
+				{ "with hands": 210 },
+				{ "dishwasher": 150 },
+				{ "trash them or eat out": 50 }
+			]
+		},
+		{
+			"question": "How do you do laundry? ",
+			"type": "Personal",
+			"answers": [
+				{ "with hands": 210 },
+				{ "washing machine": 190 },
+				{ "laundromat(pay someone else)": 10 }
+			]
+		}
+	]
+}

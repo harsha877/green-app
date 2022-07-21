@@ -30,6 +30,7 @@ exports[`Option component snapshot 1`] = `
         Object {
           "color": "white",
           "fontSize": 20,
+          "marginTop": 8,
           "textAlign": "center",
         }
       }
