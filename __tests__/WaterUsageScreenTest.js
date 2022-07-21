@@ -5,20 +5,24 @@ import WaterUsageScreen from '../src/views/waterUsageScreen';
 import { useStateValue } from "../src/views/stateProvider"
 import { TestWatcher } from 'jest';
 
-test("test", () => {})
-/*
+jest.mock('../src/views/stateProvider', () => ({
+    useStateValue: () => [0, {
+        user: "UPDATE_SCORE",
+        score: 1,
+    }]
+}));
 
-var routes = { params: 0}
+
+var routes = { params: 0 }
 test("Options Component Loading", () => {
-    
+
     render(<WaterUsageScreen />)
 
 })
 
-
-/*
 test("Option component snapshot", () => {
-    let component = render(<Options prop={arr} />).toJSON();
+    let component = render(<WaterUsageScreen />).toJSON();
+    console.log(JSON.stringify(component));
     expect(component).toMatchSnapshot();
 })
 
@@ -26,30 +30,96 @@ test("Option component snapshot", () => {
 describe("Testing Option component", () => {
     let component;
     beforeEach(() => {
-        component = render(<Options prop={arr} />);
+        component = render(<WaterUsageScreen />).toJSON();
 
     })
 
-    test("Testing Styles", () => {
-        const props = component.toJSON();
-        //console.log(props);
-        let Styles = props.children[0].props.style;
-        //console.log(Styles);
+    test("Testing Styles first View", () => {
+
+        let Styles = component.props.style;
         expect(Styles).toStrictEqual({
-            opacity: 1,
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center"
         });
     })
 
     test("Testing Styles text", () => {
-        const props = component.toJSON();
-        //console.log(props);
-        let Styles = props.children[0].children[0].props.style;
-        console.log(Styles);
+        let Styles = component.children[0].props.style;
         expect(Styles).toStrictEqual({
-            fontSize: 20,
-            color: "white",
+            position: "absolute",
+            width: 750,
+            top: 0
+        });
+    })
+
+
+
+    test("Testing Styles text view", () => {
+        let Styles = component.children[0].children[0].props.style;
+        expect(Styles).toStrictEqual({
+            backgroundColor: '#2471A3',
+            height: 80
+
+        });
+    })
+
+    test("Testing Styles text", () => {
+        let Styles = component.children[0].props.style;
+        expect(Styles).toStrictEqual({
+            position: "absolute",
+            width: 750,
+            top: 0
+        });
+    })
+
+    test("Testing Styles text view svg", () => {
+        let Styles = component.children[0].children[0].children[0].props.style[0];
+        expect(Styles).toStrictEqual({
+            backgroundColor: "transparent",
+            borderWidth: 0
+        });
+    })
+
+    test("Testing Styles headerText", () => {
+        let Styles = component.children[1].props.style;
+        expect(Styles).toStrictEqual({
+            color: "#2471A3",
+            fontSize: 30,
+            margin: 40,
+            fontWeight: "500",
             textAlign: "center",
         });
     })
 
-});*/
+    test("Testing Styles resultText", () => {
+        let Styles = component.children[2].props.style;
+        expect(Styles).toStrictEqual({
+            fontSize: 25,
+            textAlign: "center",
+            color: "#000000",
+            fontWeight: "500",
+        });
+    })
+
+    test("Testing resultText data", () => {
+        let styles = component.children[2].children[0];
+        styles = styles + component.children[2].children[1];
+        expect(styles).toStrictEqual('Water Usage:  litres/day');
+    })
+
+    test("Testing static text data", () => {
+        let styles = component.children[3].children[0];
+        expect(styles).toStrictEqual('Canada Average Water Usage: 2432 litres/day');
+    })
+
+    test("Testing Styles bottum", () => {
+        let Styles = component.children[4].props.style;
+        expect(Styles).toStrictEqual({
+            position: "absolute",
+            width: 750,
+            bottom: 0,
+        });
+    })
+//children 4 can add more test cases if needed
+});

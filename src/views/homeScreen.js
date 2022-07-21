@@ -73,59 +73,6 @@ export default function HomeScreen({ route, navigation }) {
     )
 }
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-	container: {
-		flex: 1,
-		justifyContent: "center",
-		backgroundColor: "#ecf0f1",
-		padding: 2,
-		marginTop: 20,
-	},
-	paragraph: {
-		borderColor: "black",
-		borderWidth: 1,
-		margin: 30,
-		marginBottom: 3,
-		borderRadius: 25,
-		height: 60,
-		backgroundColor: "#003f69",
-		fontSize: 18,
-		textAlign: "center",
-		paddingHorizontal: 30,
-	},
-	typeWriter: {
-		color: "#2471A3",
-		fontSize: 25,
-		marginTop: 40,
-		fontWeight: "500",
-		textAlign: "center",
-	},
-	questionNo: {
-		color: "#2471A3",
-		fontSize: 18,
-		margin: 5,
-	},
-	Question: {
-		fontSize: 20,
-		margin: 5,
-		fontWeight: "500",
-	},
-	bottom: {
-		position: "absolute",
-		width: Dimensions.get("screen").width,
-		bottom: 10,
-	},
-	box: {
-		backgroundColor: "#2471A3",
-		height: 80,
-		marginTop: 250,
-	},
-	bottomWavy: {
-		position: "absolute",
-		bottom: 20,
-	},
-})
-=======
     container: {
         flex: 1,
         justifyContent: "center",
@@ -184,4 +131,3 @@ const styles = StyleSheet.create({
         bottom: 20,
     },
 })
->>>>>>> app_logo

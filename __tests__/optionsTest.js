@@ -4,6 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import Options from '../src/components/options';
 import { useStateValue } from "../src/views/stateProvider"
 
+jest.mock('../src/views/stateProvider', () => ({
+    useStateValue: () => [0, {
+        type: "UPDATE_SCORE",
+        score: 1,
+    }]
+}));
+
 var arr = { value: 1, key: 1, optionIdx: 1, navigation: { NavigationContainer }, qnIndex: 0 }
 test("Options Component Loading", () => {
     render(<Options prop={arr} />)

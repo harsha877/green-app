@@ -3,6 +3,19 @@
 exports[`CustomerLogin Screen snapshot 1`] = `
 <RCTScrollView>
   <View>
+    <Text
+      style={
+        Object {
+          "color": "#2471A3",
+          "fontSize": 30,
+          "fontWeight": "500",
+          "marginTop": 10,
+          "textAlign": "center",
+        }
+      }
+    >
+      Customer Login
+    </Text>
     <View
       style={
         Object {
@@ -102,7 +115,7 @@ exports[`CustomerLogin Screen snapshot 1`] = `
           Object {
             "backgroundColor": "#2471A3",
             "height": 80,
-            "marginTop": 190,
+            "marginTop": 250,
           }
         }
       >
@@ -160,7 +173,7 @@ exports[`CustomerLogin Screen snapshot 1`] = `
           Object {
             "backgroundColor": "#2471A3",
             "height": 80,
-            "marginTop": 190,
+            "marginTop": 250,
           }
         }
       >
