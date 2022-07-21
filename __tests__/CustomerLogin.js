@@ -36,7 +36,7 @@ describe("CustomerLogin Screen QueryTesting",()=>{
 
      test("Testing Styles",()=>{
             const props=LoginComponent.toJSON();
-            let containerStyles=props.children[0].children[0].props.style;
+            let containerStyles=props.children[0].children[1].props.style;
             expect(containerStyles).toStrictEqual({
                     display: "flex",
                     flexDirection: "column",
@@ -47,7 +47,7 @@ describe("CustomerLogin Screen QueryTesting",()=>{
 
      test("Testing Styles",()=>{
         const props=LoginComponent.toJSON();
-        let TextInputStyles=props.children[0].children[0].children[1].props.style;
+        let TextInputStyles=props.children[0].children[1].children[1].props.style;
         expect(TextInputStyles).toStrictEqual({
         height: 40,
 		margin: 15,
@@ -60,10 +60,10 @@ describe("CustomerLogin Screen QueryTesting",()=>{
 
     test("Testing box Styles",()=>{
         const props=LoginComponent.toJSON();
-        let boxStyles=props.children[0].children[1].children[0].props.style;
+        let boxStyles=props.children[0].children[2].children[0].props.style;
         expect(boxStyles).toStrictEqual({
                     backgroundColor: "#2471A3",
                     height: 80,
-                    marginTop: 190,
+                    marginTop: 250,
                 });})
     });

@@ -50,6 +50,7 @@ export default function CustomerLogin({ onSubmit }) {
 
 	return (
 		<ScrollView>
+			<Text style={styles.headerText}>Customer Login</Text>
 			<View style={styles.container}>
 				<Image source={require("../../assets/avatar.png")} />
 				<TextInput
@@ -116,6 +117,14 @@ const styles = StyleSheet.create({
 		marginTop: 100,
 	},
 
+	headerText: {
+		color: "#2471A3",
+		fontSize: 30,
+		marginTop: 10,
+		fontWeight: "500",
+		textAlign: "center",
+	},
+
 	TextInput: {
 		height: 40,
 		margin: 15,
@@ -146,7 +155,7 @@ const styles = StyleSheet.create({
 	box: {
 		backgroundColor: "#2471A3",
 		height: 80,
-		marginTop: 190,
+		marginTop: 250,
 	},
 	bottomWavy: {
 		position: "absolute",

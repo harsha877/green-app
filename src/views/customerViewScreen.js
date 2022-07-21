@@ -172,7 +172,7 @@ export default function CustomerViewScreen({ navigation, route }) {
 
 	return (
 		<ScrollView>
-			<Text style={styles.text}>Customer View page</Text>
+			{/* <Text style={styles.text}>Customer View page</Text> */}
 
 			<View style={styles.list}>
 				<TextInput
