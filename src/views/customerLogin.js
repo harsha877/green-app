@@ -1,13 +1,13 @@
 import * as React from "react"
 import {
-	View,
-	StyleSheet,
-	Text,
-	Image,
-	ScrollView,
-	Dimensions,
-	TextInput,
-	Button,
+    View,
+    StyleSheet,
+    Text,
+    Image,
+    ScrollView,
+    Dimensions,
+    TextInput,
+    Button,
 } from "react-native"
 import Svg, { Path } from "react-native-svg"
 import { useState } from "react"
@@ -15,7 +15,6 @@ import { readCollectionDocument } from "../firebase/config"
 import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView"
 import reducer from "./reducer"
 import { GREEN_DB_COLLECTION_CUSTOMER } from "../constant/constants"
-
 export default function CustomerLogin({ onSubmit }) {
 	const [username, setusername] = useState("")
 	const [password, setPassword] = useState("")
@@ -107,58 +106,62 @@ export default function CustomerLogin({ onSubmit }) {
 		</ScrollView>
 	)
 }
-
 const styles = StyleSheet.create({
-	container: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
-		alignItems: "center",
-		marginTop: 100,
-	},
-
-	headerText: {
-		color: "#2471A3",
-		fontSize: 30,
-		marginTop: 10,
-		fontWeight: "500",
-		textAlign: "center",
-	},
-
-	TextInput: {
-		height: 40,
-		margin: 15,
-		width: 300,
-		borderWidth: 1,
-		borderRadius: 10,
-		padding: 10,
-	},
-
-	text: {
-		height: 40,
-		margin: 0,
-		paddingTop: 5,
-		color: "red",
-	},
-	Button: {
-		height: 40,
-		borderWidth: 1,
-		marginTop: 10,
-		padding: 10,
-	},
-	top: {},
-	bottom: {
-		position: "absolute",
-		width: Dimensions.get("screen").width,
-		bottom: 10,
-	},
-	box: {
-		backgroundColor: "#2471A3",
-		height: 80,
-		marginTop: 250,
-	},
-	bottomWavy: {
-		position: "absolute",
-		bottom: 20,
-	},
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 80,
+    },
+    email_txt: {
+        fontSize: 22,
+        textAlign: "center",
+        color: "#000000",
+        fontWeight: "400",
+        margin: 20,
+    },
+    TextInput: {
+        height: 40,
+        margin: 15,
+        width: 300,
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10,
+    },
+    header_txt: {
+        color: "#2471A3",
+        fontSize: 25,
+        marginTop: 10,
+        marginBottom: 30,
+        fontWeight: "500",
+        textAlign: "center",
+    },
+    text: {
+        height: 40,
+        margin: 0,
+        paddingTop: 5,
+        color: "red",
+    },
+    Button: {
+        height: 40,
+        borderWidth: 1,
+        marginTop: 10,
+        padding: 10,
+    },
+    top: {},
+    bottom: {
+        position: "absolute",
+        width: Dimensions.get("screen").width,
+        bottom: 10,
+    },
+    box: {
+        backgroundColor: "#2471A3",
+        height: 80,
+        marginTop: 150,
+    },
+    bottomWavy: {
+        position: "absolute",
+        bottom: 20,
+    },
 })
