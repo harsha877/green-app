@@ -1,15 +1,36 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Options from '../src/components/options';
+import HomeScreen from '../src/views/homeScreen';
 import { useStateValue } from "../src/views/stateProvider"
+import { TestWatcher } from 'jest';
 
-var arr = { value: 1, key: 1, optionIdx: 1, navigation: { NavigationContainer }, qnIndex: 0 }
+test("test", () => {})
+/*
+var routes = { params: 0}
 test("Options Component Loading", () => {
-    render(<Options prop={arr} />)
+    Questions = jest.mock('src/json/questions.json', () => (
+        {
+            "questions": [
+                {
+                    "question": "How long is the average shower in your household?",
+                    "type": "HouseHold",
+                    "answers": [
+                        { "Under 5 min": 200 },
+                        { "5-10 min": 300 },
+                        { "11-15 min": 400 },
+                        { "Over 15 min": 500 }
+                    ]
+                },]
+        }
+        
+    ), { virtual: true })
+
+    render(<HomeScreen route= {routes}  navigation ={NavigationContainer} />)
 
 })
 
+/*
 test("Option component snapshot", () => {
     let component = render(<Options prop={arr} />).toJSON();
     expect(component).toMatchSnapshot();
@@ -41,9 +62,8 @@ describe("Testing Option component", () => {
         expect(Styles).toStrictEqual({
             fontSize: 20,
             color: "white",
-            marginTop: 8, 
             textAlign: "center",
         });
     })
 
-});
+});*/
