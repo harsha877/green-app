@@ -35,15 +35,15 @@ describe("Testing component", () => {
 
     test("Testing Styles", () => {
         const homescreen = component.toJSON();
-        //console.log(JSON.stringify(props));
+        console.log(JSON.stringify(homescreen));
         let Styles = homescreen.children[0].children[0].props.style;
         //console.log(Styles);
         expect(Styles).toStrictEqual({
-            color: "#2471A3",
-            fontSize: 25,
-            marginTop: 40,
-            fontWeight: "500",
-            textAlign: "center",
+            resizeMode: 'contain',
+            alignSelf: 'center',
+            height: 80,
+            width: 450,
+            marginTop: 30,
         });
     })
 
@@ -125,7 +125,7 @@ describe("Testing component", () => {
         expect(Styles).toStrictEqual({
             backgroundColor: "#2471A3",
             height: 80,
-            marginTop: 250
+            marginTop: 130,
 
         });
     })
