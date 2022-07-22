@@ -1,10 +1,18 @@
 import React from "react"
-import { StyleSheet, Text, View, Linking, Dimensions } from "react-native"
+import { StyleSheet, Text, View, Linking, Dimensions, Button, Alert } from "react-native"
 import { useStateValue } from "../views/stateProvider"
 import Svg, { Path } from "react-native-svg"
 
-const WaterUsageScreen = () => {
+const handleFeedback = () => {
+	console.log("Input Feedback")
+	navigation.navigate("customer feedback")
+	
+}
+
+const WaterUsageScreen = ({ props }) => {
 	const [{ user, score }] = useStateValue()
+
+
 	return (
 		<View style={styles.resultScreen}>
 			<View style={styles.top}>
@@ -29,6 +37,13 @@ const WaterUsageScreen = () => {
 			<Text style={styles.resultText1}>
 				Canada Average Water Usage: 2432 litres/day
 			</Text>
+			<View style={styles.button1}>
+				<Button
+					color={"#063f5c"}
+					onPress={() => Alert.alert("customer feedback")}
+					title="Rate Us Here"
+				/>
+			</View>
 			<View style={styles.bottom}>
 				<View style={styles.box}>
 					<Svg
@@ -43,7 +58,7 @@ const WaterUsageScreen = () => {
 						/>
 					</Svg>
 				</View>
-			</View>
+			</View>			
 		</View>
 	)
 }
@@ -94,4 +109,8 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		bottom: 20,
 	},
+	button1: {
+		marginTop: 20,
+		borderRadius: 50,
+	}
 })

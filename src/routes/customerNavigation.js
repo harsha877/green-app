@@ -19,7 +19,7 @@ export default function CustomerNavigator() {
             <Stack.Screen name='customer login' options={{headerShown: false}} component={Customer} />
             <Stack.Screen name='customer question' options={{headerShown: false}} component={QuizInput} />
             <Stack.Screen name='customer view' options={{headerShown: false}} component={CustomerViewScreen} />
-            <Stack.Screen name='customer feedback' options={{headerShown: false}} component={FeedBack} />
+            
    
         </Stack.Navigator>
     

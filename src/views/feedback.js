@@ -5,7 +5,7 @@ import { Text, View, StyleSheet,ScrollView,Dimensions,TouchableOpacity,SafeAreaV
 import Constants from 'expo-constants';
 import TypeWriter from "react-native-typewriter";
 import RadioGroup, {RadioButtonProps} from 'react-native-radio-buttons-group';
-import FeedBackQuestions from "../json/feedbackquestions.json"
+
 
 const radioButtonsData = [{
     id: '1', // acts as primary key, should be unique and non-empty string
