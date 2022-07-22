@@ -9,12 +9,13 @@ import { GREEN_DB_COLLECTION_QUIZES } from "../constant/constants";
 
 //Firebase configurations
 const firebaseConfig = {
-  apiKey: "AIzaSyCHhqxWOL288qM4E33W85bzf5Y7-LP7q6s",
-  authDomain: "green-db-7954e.firebaseapp.com",
-  projectId: "green-db-7954e",
-  storageBucket: "green-db-7954e.appspot.com",
-  messagingSenderId: "817637952130",
-  appId: "1:817637952130:web:4c2ecbe03d01ecaebe429b"
+  apiKey: "AIzaSyB3aROudRbJDaKmc066sqxkuWuJVr1HgAo",
+  authDomain: "green-db-6553a.firebaseapp.com",
+  projectId: "green-db-6553a",
+  storageBucket: "green-db-6553a.appspot.com",
+  messagingSenderId: "951852108196",
+  appId: "1:951852108196:web:a8d7672ddf826b63a5d931",
+  measurementId: "G-GRV64PVRTH"
 };
 
 // To Initialize the Firebase with the above functionalities

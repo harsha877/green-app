@@ -21,6 +21,9 @@ const Option = (props) => {
 					updateScore(calculateIdx)
 					if (props.qnIndex + 1 >= Questions.questions.length) {
 						console.log("End of Questions")
+						props.navigation.navigate("QuestionScreen", {
+							index: 0,
+						})
 						props.navigation.navigate("WaterUsageScreen")
 					} else {
 						props.navigation.navigate("QuestionScreen", {
@@ -53,5 +56,6 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: "white",
 		textAlign: "center",
+		marginTop: 8,
 	},
 })
