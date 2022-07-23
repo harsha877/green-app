@@ -22,7 +22,6 @@ export const CUSTOM_QUESTION_SUBMIT_TAG = 'click on Submit to end the survey';
 // Water Usage constants 
 export const Home_Screen = 'QuestionScreen';
 export const Water_Usage_Screen = 'WaterUsageScreen';
-export const Feedback_Screen = 'customer feedback';
 
 //templates
 

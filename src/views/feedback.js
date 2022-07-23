@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Text, View, StyleSheet,ScrollView,Dimensions,TouchableOpacity,SafeAreaView,Image, TextInput,Button
+import { Text, View, StyleSheet,ScrollView,Dimensions,TouchableOpacity,SafeAreaView,Image, TextInput,Button, Alert
  } from 'react-native';
 import Constants from 'expo-constants';
 import TypeWriter from "react-native-typewriter";
@@ -52,8 +52,7 @@ export default function FeedBack({ route, navigation }) {
 const UseTextInputMultiline = () => {
   const [value, onChangeText] = React.useState('');
 
-  // If you type something in the text box that is a color, the background will change to that
-  // color.
+  
   return (
     <View
       style={{
@@ -120,10 +119,19 @@ const UseTextInputMultiline = () => {
       }
     ]
 
-    
+    const SubmitFeedBack = () =>{
+        Alert.alert(
+          "Feedback",
+          "Your Feedback Submitted",
+          [
+        {
+          text: "OK",
+          onPress: () => navigation.goBack()
+        }
+      ]
+        );
 
-    
-
+    }
 
 
     const FeedBackList = () => {
@@ -149,15 +157,9 @@ const UseTextInputMultiline = () => {
                      item.id == 2
                      ?
                             <RadioButtn style={styles.radiostyle}/>
-                            
                      :
-                            <UseTextInputMultiline/>
-                            
-                     
+                            <UseTextInputMultiline/>                     
                      }
-                    
-                  
-                 
                   </TouchableOpacity>
                  
                   )
@@ -180,7 +182,7 @@ return (
       
     </View>
     <View style={styles.subbutton}>
-    <Button color={"#063f5c"}  title="Submit" />
+    <Button color={"#063f5c"}  title="Submit" onPress={SubmitFeedBack}  />
     </View>
   </ScrollView>
   </SafeAreaView>  

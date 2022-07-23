@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { StyleSheet, Text, View, Linking, Dimensions, Button, Alert } from "react-native"
 import { useStateValue } from "../views/stateProvider"
 import Svg, { Path } from "react-native-svg"
-import { TouchableOpacity } from "react-native-gesture-handler"
 
 
 
@@ -33,13 +32,6 @@ const WaterUsageScreen = () => {
 			<Text style={styles.resultText1}>
 				Canada Average Water Usage: 2432 litres/day
 			</Text>
-			  <View>
-				<Button 
-				  onPress={() => {Alert.alert('Hello')}}	
-				  color={"#063f5c"}
-				  title={"Rate App"}
-				  />
-			  </View>
 			<View style={styles.bottom}>
 				<View style={styles.box}>
 					<Svg
