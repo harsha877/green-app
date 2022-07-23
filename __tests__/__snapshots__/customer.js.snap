@@ -15,6 +15,9 @@ exports[`Customer Screen snapshot 1`] = `
 >
   <RCTScrollView>
     <View>
+      <Text>
+        Customer Login
+      </Text>
       <View
         style={
           Object {
@@ -22,7 +25,7 @@ exports[`Customer Screen snapshot 1`] = `
             "display": "flex",
             "flexDirection": "column",
             "justifyContent": "center",
-            "marginTop": 100,
+            "marginTop": 80,
           }
         }
       >
@@ -114,7 +117,7 @@ exports[`Customer Screen snapshot 1`] = `
             Object {
               "backgroundColor": "#2471A3",
               "height": 80,
-              "marginTop": 190,
+              "marginTop": 150,
             }
           }
         >
@@ -172,7 +175,7 @@ exports[`Customer Screen snapshot 1`] = `
             Object {
               "backgroundColor": "#2471A3",
               "height": 80,
-              "marginTop": 190,
+              "marginTop": 150,
             }
           }
         >

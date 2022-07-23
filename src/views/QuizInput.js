@@ -145,7 +145,7 @@ export default function QuizInput({ navigation, route }) {
 			{flag == false ? (
 				<>
 					<TextInput
-						style={{ ...styles.TextInput, height: textBoxSize }}
+						style={{ ...styles.TextInput, height: textBoxSize, marginTop:70 }}
 						placeholder="Enter Quiz Name"
 						value={id}
 						onChangeText={(text) => setId(text)}
@@ -297,6 +297,7 @@ export default function QuizInput({ navigation, route }) {
 }
 const styles = StyleSheet.create({
 	TextInput: {
+		marginTop: 10,
 		margin: 15,
 		borderWidth: 1,
 		padding: 10,
@@ -311,7 +312,8 @@ const styles = StyleSheet.create({
 	submitButton: {},
 	text: {
 		height: 40,
-		margin: 10,
+		marginTop: 30,
+		margin: 15,
 		width: 250,
 		color: "#2471A3",
 		fontWeight: "bold",

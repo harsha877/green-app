@@ -89,147 +89,6 @@ exports[`Main Container snapShot 1`] = `
                   ]
                 }
               >
-                <View
-                  collapsable={false}
-                  pointerEvents="box-none"
-                  style={
-                    Object {
-                      "zIndex": 1,
-                    }
-                  }
-                >
-                  <View
-                    accessibilityElementsHidden={false}
-                    importantForAccessibility="auto"
-                    onLayout={[Function]}
-                    pointerEvents="box-none"
-                    style={null}
-                  >
-                    <View
-                      collapsable={false}
-                      pointerEvents="box-none"
-                      style={
-                        Object {
-                          "bottom": 0,
-                          "left": 0,
-                          "opacity": 1,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "zIndex": 0,
-                        }
-                      }
-                    >
-                      <View
-                        collapsable={false}
-                        style={
-                          Object {
-                            "backgroundColor": "rgb(255, 255, 255)",
-                            "borderBottomColor": "rgb(216, 216, 216)",
-                            "flex": 1,
-                            "shadowColor": "rgb(216, 216, 216)",
-                            "shadowOffset": Object {
-                              "height": 0.5,
-                              "width": 0,
-                            },
-                            "shadowOpacity": 0.85,
-                            "shadowRadius": 0,
-                          }
-                        }
-                      />
-                    </View>
-                    <View
-                      collapsable={false}
-                      pointerEvents="box-none"
-                      style={
-                        Object {
-                          "height": 44,
-                          "maxHeight": undefined,
-                          "minHeight": undefined,
-                          "opacity": undefined,
-                          "transform": undefined,
-                        }
-                      }
-                    >
-                      <View
-                        pointerEvents="none"
-                        style={
-                          Object {
-                            "height": 0,
-                          }
-                        }
-                      />
-                      <View
-                        pointerEvents="box-none"
-                        style={
-                          Object {
-                            "alignItems": "stretch",
-                            "flex": 1,
-                            "flexDirection": "row",
-                          }
-                        }
-                      >
-                        <View
-                          collapsable={false}
-                          pointerEvents="box-none"
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "flexBasis": 0,
-                              "flexGrow": 1,
-                              "justifyContent": "center",
-                              "marginStart": 0,
-                              "opacity": 1,
-                            }
-                          }
-                        />
-                        <View
-                          collapsable={false}
-                          pointerEvents="box-none"
-                          style={
-                            Object {
-                              "justifyContent": "center",
-                              "marginHorizontal": 16,
-                              "maxWidth": 718,
-                              "opacity": 1,
-                            }
-                          }
-                        >
-                          <Text
-                            accessibilityRole="header"
-                            aria-level="1"
-                            collapsable={false}
-                            numberOfLines={1}
-                            onLayout={[Function]}
-                            style={
-                              Object {
-                                "color": "rgb(28, 28, 30)",
-                                "fontSize": 17,
-                                "fontWeight": "600",
-                              }
-                            }
-                          >
-                            QuestionScreen
-                          </Text>
-                        </View>
-                        <View
-                          collapsable={false}
-                          pointerEvents="box-none"
-                          style={
-                            Object {
-                              "alignItems": "flex-end",
-                              "flexBasis": 0,
-                              "flexGrow": 1,
-                              "justifyContent": "center",
-                              "marginEnd": 0,
-                              "opacity": 1,
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
                 <RNSScreenContainer
                   onLayout={[Function]}
                   style={
@@ -321,6 +180,7 @@ exports[`Main Container snapShot 1`] = `
                         style={
                           Object {
                             "flex": 1,
+                            "marginTop": 0,
                           }
                         }
                       >
@@ -377,14 +237,19 @@ exports[`Main Container snapShot 1`] = `
                               >
                                 <RCTScrollView>
                                   <View>
-                                    <Text
+                                    <Image
+                                      source={
+                                        Object {
+                                          "testUri": "../../../assets/app_logo.png",
+                                        }
+                                      }
                                       style={
                                         Object {
-                                          "color": "#2471A3",
-                                          "fontSize": 25,
-                                          "fontWeight": "500",
-                                          "margin": 15,
-                                          "textAlign": "center",
+                                          "alignSelf": "center",
+                                          "height": 80,
+                                          "marginTop": 30,
+                                          "resizeMode": "contain",
+                                          "width": 450,
                                         }
                                       }
                                     />
@@ -394,6 +259,7 @@ exports[`Main Container snapShot 1`] = `
                                           "backgroundColor": "#ecf0f1",
                                           "flex": 1,
                                           "justifyContent": "center",
+                                          "marginTop": 20,
                                           "padding": 2,
                                         }
                                       }
@@ -409,7 +275,7 @@ exports[`Main Container snapShot 1`] = `
                                       >
                                         1
                                         /
-                                        4
+                                        10
                                       </Text>
                                       <Text
                                         style={
@@ -420,7 +286,7 @@ exports[`Main Container snapShot 1`] = `
                                           }
                                         }
                                       >
-                                        How long you shower in your household daily?
+                                        How long is the average shower in your household?
                                       </Text>
                                       <View
                                         accessible={true}
@@ -440,10 +306,11 @@ exports[`Main Container snapShot 1`] = `
                                             "borderRadius": 25,
                                             "borderWidth": 1,
                                             "fontSize": 18,
-                                            "height": 55,
+                                            "height": 60,
                                             "margin": 30,
                                             "marginBottom": 3,
                                             "opacity": 1,
+                                            "paddingHorizontal": 30,
                                             "textAlign": "center",
                                           }
                                         }
@@ -477,6 +344,7 @@ exports[`Main Container snapShot 1`] = `
                                                 Object {
                                                   "color": "white",
                                                   "fontSize": 20,
+                                                  "marginTop": 8,
                                                   "textAlign": "center",
                                                 }
                                               }
@@ -504,10 +372,11 @@ exports[`Main Container snapShot 1`] = `
                                             "borderRadius": 25,
                                             "borderWidth": 1,
                                             "fontSize": 18,
-                                            "height": 55,
+                                            "height": 60,
                                             "margin": 30,
                                             "marginBottom": 3,
                                             "opacity": 1,
+                                            "paddingHorizontal": 30,
                                             "textAlign": "center",
                                           }
                                         }
@@ -541,6 +410,7 @@ exports[`Main Container snapShot 1`] = `
                                                 Object {
                                                   "color": "white",
                                                   "fontSize": 20,
+                                                  "marginTop": 8,
                                                   "textAlign": "center",
                                                 }
                                               }
@@ -568,10 +438,11 @@ exports[`Main Container snapShot 1`] = `
                                             "borderRadius": 25,
                                             "borderWidth": 1,
                                             "fontSize": 18,
-                                            "height": 55,
+                                            "height": 60,
                                             "margin": 30,
                                             "marginBottom": 3,
                                             "opacity": 1,
+                                            "paddingHorizontal": 30,
                                             "textAlign": "center",
                                           }
                                         }
@@ -605,6 +476,7 @@ exports[`Main Container snapShot 1`] = `
                                                 Object {
                                                   "color": "white",
                                                   "fontSize": 20,
+                                                  "marginTop": 8,
                                                   "textAlign": "center",
                                                 }
                                               }
@@ -632,10 +504,11 @@ exports[`Main Container snapShot 1`] = `
                                             "borderRadius": 25,
                                             "borderWidth": 1,
                                             "fontSize": 18,
-                                            "height": 55,
+                                            "height": 60,
                                             "margin": 30,
                                             "marginBottom": 3,
                                             "opacity": 1,
+                                            "paddingHorizontal": 30,
                                             "textAlign": "center",
                                           }
                                         }
@@ -669,6 +542,7 @@ exports[`Main Container snapShot 1`] = `
                                                 Object {
                                                   "color": "white",
                                                   "fontSize": 20,
+                                                  "marginTop": 8,
                                                   "textAlign": "center",
                                                 }
                                               }
@@ -679,15 +553,13 @@ exports[`Main Container snapShot 1`] = `
                                         </View>
                                       </View>
                                     </View>
-                                    <View
-                                      style={Object {}}
-                                    >
+                                    <View>
                                       <View
                                         style={
                                           Object {
                                             "backgroundColor": "#2471A3",
                                             "height": 80,
-                                            "marginTop": 110,
+                                            "marginTop": 130,
                                           }
                                         }
                                       >
@@ -745,7 +617,7 @@ exports[`Main Container snapShot 1`] = `
                                           Object {
                                             "backgroundColor": "#2471A3",
                                             "height": 80,
-                                            "marginTop": 110,
+                                            "marginTop": 130,
                                           }
                                         }
                                       >
@@ -803,6 +675,20 @@ exports[`Main Container snapShot 1`] = `
                     </View>
                   </RNSScreen>
                 </RNSScreenContainer>
+                <View
+                  collapsable={false}
+                  pointerEvents="box-none"
+                  style={
+                    Object {
+                      "height": 44,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "zIndex": 1,
+                    }
+                  }
+                />
               </View>
             </View>
           </View>
