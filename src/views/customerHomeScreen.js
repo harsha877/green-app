@@ -29,6 +29,12 @@ export default function CustomerHomeScreen({
 		})
 	}
 
+	const handleFeedback = () => {
+		console.log("Input Feedback")
+		navigation.navigate("customer feedback", { user })
+		
+	}
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.text}>Customer Homepage</Text>
@@ -44,6 +50,13 @@ export default function CustomerHomeScreen({
 					color={"#063f5c"}
 					onPress={handleViewQuizzes}
 					title="View Quizzes"
+				/>
+			</View>
+			<View style={styles.button1}>
+				<Button
+					color={"#063f5c"}
+					onPress={handleFeedback}
+					title="App Feedback"
 				/>
 			</View>
 			<View style={styles.button2}>

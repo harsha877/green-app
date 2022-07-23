@@ -2,7 +2,8 @@ import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../views/homeScreen';
 import WaterUsageScreen from '../views/WaterUsageScreen';
-import {Home_Screen, Water_Usage_Screen}  
+import FeedBack from "../views/feedback";
+import {Home_Screen, Water_Usage_Screen, Feedback_Screen}  
     from "../constant/constants";
 
 const Stack = createStackNavigator();
