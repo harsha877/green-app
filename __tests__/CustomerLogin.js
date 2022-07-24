@@ -42,7 +42,7 @@ describe("CustomerLogin Screen QueryTesting",()=>{
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    marginTop: 100,
+                    marginTop: 80,
             });})
 
      test("Testing Styles",()=>{
@@ -64,6 +64,6 @@ describe("CustomerLogin Screen QueryTesting",()=>{
         expect(boxStyles).toStrictEqual({
                     backgroundColor: "#2471A3",
                     height: 80,
-                    marginTop: 250,
+                    marginTop: 150,
                 });})
     });
