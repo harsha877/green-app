@@ -31,7 +31,7 @@ export default function ResultsScreen({ route, navigation }) {
 				onPressHandler={returntoHome}
 				type="button"
 			/>
-			<Text style={styles.TextInput}>Congrats you Scored {result}%</Text>
+			<Text style={styles.TextInput}>Congrats you Scored {result.toFixed(2)}%</Text>
 		</View>
 	)
 }

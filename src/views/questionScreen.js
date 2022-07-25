@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet ,ScrollView} from "react-native"
 import CustumeButton from "../components/button"
 import {
 	USER_CUSTOM_QUIZ_HOMESCREEN,
@@ -41,14 +41,15 @@ export default function QuestionScreen({ route, navigation }) {
 	}
 
 	const changeColor = (weight) => {
+		let color = '#0e78ad';
 		if (weight == 1) {
-			setColor(["green", "white", "white", "white"])
+			setColor([color, "white", "white", "white"])
 		} else if (weight == 2) {
-			setColor(["white", "green", "white", "white"])
+			setColor(["white", color, "white", "white"])
 		} else if (weight == 3) {
-			setColor(["white", "white", "green", "white"])
+			setColor(["white", "white", color, "white"])
 		} else if (weight == 4) {
-			setColor(["white", "white", "white", "green"])
+			setColor(["white", "white", "white", color])
 		}
 	}
 
@@ -87,7 +88,7 @@ export default function QuestionScreen({ route, navigation }) {
 	//console.log(quiz);
 
 	return (
-		<View>
+		<ScrollView>
 			<View>
 				<Text style={styles.questionNo}>
 					{currentquestionNumber}/{quiz.length}
@@ -126,7 +127,7 @@ export default function QuestionScreen({ route, navigation }) {
 				{nextButtonView()}
 				{subitButtonView()}
 			</View>
-		</View>
+		</ScrollView>
 	)
 }
 
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
 		margin: 30,
 		marginBottom: 3,
 		borderRadius: 25,
-		backgroundColor: "#42bff5",
+		//backgroundColor: "#42bff5",
 		fontSize: 18,
 		textAlign: "center",
 	},

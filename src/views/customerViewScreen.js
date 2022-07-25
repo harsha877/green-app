@@ -248,6 +248,7 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 10,
 		margin: 20,
 		alignSelf: "center",
+		marginTop: 75
 	},
 })
 
