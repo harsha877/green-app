@@ -1,10 +1,13 @@
-import React from "react"
-import { StyleSheet, Text, View, Linking, Dimensions } from "react-native"
+import React, { useState } from "react"
+import { StyleSheet, Text, View, Linking, Dimensions, Button, Alert } from "react-native"
 import { useStateValue } from "../views/stateProvider"
 import Svg, { Path } from "react-native-svg"
 
+
+
 const WaterUsageScreen = () => {
 	const [{ user, score }] = useStateValue()
+
 	return (
 		<View style={styles.resultScreen}>
 			<View style={styles.top}>
@@ -43,7 +46,7 @@ const WaterUsageScreen = () => {
 						/>
 					</Svg>
 				</View>
-			</View>
+			</View>			
 		</View>
 	)
 }
@@ -94,4 +97,8 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		bottom: 20,
 	},
+	button1: {
+		marginTop: 20,
+		borderRadius: 50,
+	}
 })

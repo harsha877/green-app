@@ -1,13 +1,13 @@
 import * as React from "react"
 import {
-    View,
-    StyleSheet,
-    Text,
-    Image,
-    ScrollView,
-    Dimensions,
-    TextInput,
-    Button,
+	View,
+	StyleSheet,
+	Text,
+	Image,
+	ScrollView,
+	Dimensions,
+	TextInput,
+	Button,
 } from "react-native"
 import Svg, { Path } from "react-native-svg"
 import { useState } from "react"
@@ -49,7 +49,7 @@ export default function CustomerLogin({ onSubmit }) {
 
 	return (
 		<ScrollView>
-			<Text style={styles.headerText}>Customer Login</Text>
+			<Text style={styles.headerText}></Text>
 			<View style={styles.container}>
 				<Image source={require("../../assets/avatar.png")} />
 				<TextInput
@@ -72,6 +72,9 @@ export default function CustomerLogin({ onSubmit }) {
 					onPress={handleLogin}
 					title="LOGIN"
 				/>
+				<Text style={styles.email_txt}>
+                Note: To customize the quiz for your company, email us at "sessoion2group4@gmail.com"
+            </Text>
 			</View>
 			<View style={styles.top}>
 				<View style={styles.box}>
@@ -107,7 +110,7 @@ export default function CustomerLogin({ onSubmit }) {
 	)
 }
 const styles = StyleSheet.create({
-    container: {
+	container: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -158,7 +161,7 @@ const styles = StyleSheet.create({
     box: {
         backgroundColor: "#2471A3",
         height: 80,
-        marginTop: 150,
+        marginTop: 250,
     },
     bottomWavy: {
         position: "absolute",
