@@ -117,6 +117,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginTop: 80,
     },
+
+	headerText: {
+		color: "#2471A3",
+		fontSize: 30,
+		marginTop: 10,
+		fontWeight: "500",
+		textAlign: "center",
+	},
     email_txt: {
         fontSize: 22,
         textAlign: "center",
@@ -161,7 +169,7 @@ const styles = StyleSheet.create({
     box: {
         backgroundColor: "#2471A3",
         height: 80,
-        marginTop: 250,
+        marginTop: 140,
     },
     bottomWavy: {
         position: "absolute",
