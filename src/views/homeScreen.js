@@ -104,11 +104,11 @@ const styles = StyleSheet.create({
 		margin: 30,
 		marginBottom: 3,
 		borderRadius: 25,
-		height: 60,
+		// height: 70,
 		backgroundColor: "#003f69",
 		fontSize: 18,
 		textAlign: "center",
-		paddingHorizontal: 30,
+		paddingVertical: 15,
 	},
 	typeWriter: {
 		color: "#2471A3",

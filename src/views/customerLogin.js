@@ -49,7 +49,7 @@ export default function CustomerLogin({ onSubmit }) {
 
 	return (
 		<ScrollView>
-			<Text style={styles.headerText}></Text>
+			<Text style={styles.headerText}>Customer Login Page</Text>
 			<View style={styles.container}>
 				<Image source={require("../../assets/avatar.png")} />
 				<TextInput
